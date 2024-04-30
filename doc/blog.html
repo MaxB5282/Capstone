@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Prof.&nbsp;Yuster">
+<meta name="author" content="Maxwell Bilyk">
 
-<title>My awesome blog</title>
+<title>Navigating the Complexities of U.S. Migration</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,9 +18,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,61 +48,12 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
 }
 </style>
 
@@ -116,8 +68,26 @@ div.csl-indent {
 <script src="blog_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="blog_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="blog_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.12.1.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
 
 </head>
 
@@ -129,19 +99,40 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a>
   <ul class="collapse">
-  <li><a href="#quarto-is-cool" id="toc-quarto-is-cool" class="nav-link" data-scroll-target="#quarto-is-cool">Quarto is cool</a></li>
+  <li><a href="#dataset-1" id="toc-dataset-1" class="nav-link" data-scroll-target="#dataset-1">Dataset 1</a></li>
+  <li><a href="#dataset-2" id="toc-dataset-2" class="nav-link" data-scroll-target="#dataset-2">Dataset 2</a></li>
+  <li><a href="#dataset-3" id="toc-dataset-3" class="nav-link" data-scroll-target="#dataset-3">Dataset 3</a></li>
+  <li><a href="#dataset-4" id="toc-dataset-4" class="nav-link" data-scroll-target="#dataset-4">Dataset 4</a></li>
+  <li><a href="#dataset-5" id="toc-dataset-5" class="nav-link" data-scroll-target="#dataset-5">Dataset 5</a></li>
+  <li><a href="#dataset-6" id="toc-dataset-6" class="nav-link" data-scroll-target="#dataset-6">Dataset 6</a></li>
   </ul></li>
+  <li><a href="#the-questions" id="toc-the-questions" class="nav-link" data-scroll-target="#the-questions">The Questions</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a></li>
+  <li><a href="#the-results" id="toc-the-results" class="nav-link" data-scroll-target="#the-results">The Results</a>
+  <ul class="collapse">
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  </ul></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a>
+  <ul class="collapse">
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work">Future Work</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="..\blog.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">My awesome blog</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
-<p class="subtitle lead">Spring 2023</p>
+<div class="quarto-title-block"><div><h1 class="title">Navigating the Complexities of U.S. Migration</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">Spring 2024</p>
 </div>
 
 
@@ -151,7 +142,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Prof.&nbsp;Yuster </p>
+             <p>Maxwell Bilyk </p>
           </div>
   </div>
     
@@ -164,82 +155,573 @@ div.csl-indent {
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://www.ramapo.edu/tours/wp-content/uploads/sites/344/2020/10/Fall-Arch-Straigh-Edit.jpg" class="img-fluid figure-img" alt="A photo of the arch at Ramapo College."></p>
-<p></p><figcaption class="figure-caption">Source: Ramapo College of New Jersey</figcaption><p></p>
+<p><img src="https://imageio.forbes.com/specials-images/imageserve/1132026265/Illustration-of-USA-immigration/0x0.jpg?format=jpg&amp;crop=8176,4013,x0,y391,safe&amp;width=1440" class="img-fluid figure-img" alt="U.S. flag with migrants"></p>
+<figcaption class="figure-caption">Source: Forbes</figcaption>
 </figure>
 </div>
-<section id="welcome" class="level1">
-<h1>Welcome</h1>
-<p><strong>Welcome</strong> to <em>my</em> <del>super</del> SUPER awesome <code>blog</code> post! <span class="math display">\[x^2 = 1\]</span></p>
-<section id="quarto-is-cool" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-is-cool">Quarto is cool</h2>
-<p>This section was copy/pasted from various parts of the <a href="https://quarto.org/docs/get-started/hello/vscode.html">Quarto website</a>.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip With Caption
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is an example of a callout with a caption.</p>
-</div>
-</div>
-<p>For your reference, here’s an example of a Python code cell in Quarto, along with a figure that gets generated, along with a caption and a label so that it can be referred to automatically as “Figure 1” (or whatever) in the writeup.</p>
-<p>For a demonstration of a line plot on a polar axis, see <a href="#fig-polar">Figure&nbsp;1</a>.</p>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>My inspiration for this research came from a discomfort of being naive to the subject of immigration in my own country. All I hear about on the news is immigration. Some news channels tell me that it is ruining our country and we need to close the borders. Other sources tell me that we aren’t doing enough as a country to support immigrants and that they could really beneift our country if we allocated resources correctly to implement them smoothly into our society.</p>
+<p>I wanted to be able to make my own conclusions, so I sought out concrete data pertaining to U.S. immigration, and began my analysis.</p>
+<p>This project aims to uncover the patterns of immigration over time, observe areas where immigrants are residing, and highlight disparities between the educational attainment of immigrants based on their country of origin.</p>
+<p>The findings from this project could potentially be used by U.S. policymakers to help them make more informed decisions regarding U.S. immigration.</p>
+</section>
+<section id="the-data" class="level1">
+<h1>The Data</h1>
+<p>The data used for this project comes from <a href="https://www.migrationpolicy.org/programs/data-hub/us-immigration-trends?gad_source=1&amp;gclid=CjwKCAiAivGuBhBEEiwAWiFmYbxFPH7H1xkFCmwWRPyeHY8k87cMI-NkOL9lygAPqFa7ppdZx1vOxxoC88YQAvD_BwE">The Nonpartisan Migration Policy Institute</a>. This orginization is an independent group that seeks to improve immigration and integration policies in the U.S. through research and analysis of data.</p>
+<p>This was the perfect source of data for me. Through my background research I found so many biased and unproffesional sources that were publishing immigration data, and I did not want to include their data in my project.</p>
+<p>In total, I worked with six datasets.</p>
+<section id="dataset-1" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-1">Dataset 1</h2>
+<p>A dataset that has the annual number of new legal permanent residents by country of birth, from the years 1999-2022. A single row represents a given country, and a column represnts the number of new legal immigrants from that given year.</p>
+</section>
+<section id="dataset-2" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-2">Dataset 2</h2>
+<p>A dataset that holds information on the immigrant population by state from 1990, 2000, 2010,2019, 2021, 2022. Each row represents a state in the U.S. in one of the given years, and the columns are features like, total population, immigrant population and share of total state population in those given years.</p>
+</section>
+<section id="dataset-3" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-3">Dataset 3</h2>
+<p>A dataset that holds information on U.S. annual refugee resettlement ceiling and annual number of admitted refigees from the years 1975-2024. Each row represents a given year, and that years annual resettlement ceiling and the number of admitted refugees.</p>
+</section>
+<section id="dataset-4" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-4">Dataset 4</h2>
+<p>A dataset that holds information on the National and State estimates of the unnathorized immigrant population from 2015 to 2019 (totals, not year over year). Each row represents a given state, their estimated number of unathorized immigrants and the state share of unauthorized immigrant population.</p>
+</section>
+<section id="dataset-5" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-5">Dataset 5</h2>
+<p>A dataset that holds information on the number of unaccompanied children released to sponsors by state from fiscal years 2014-2023. Each row represents a given state, and the columns represnt the years, and the associated values are the number of unaccompanied children.</p>
+</section>
+<section id="dataset-6" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-6">Dataset 6</h2>
+<p>A dataset that holds information on the educational attainment of recently arrived immigrants (ages 25 and over) by country of birth as of 2022. A single row represents a given country, and the different columns are Number of Adults, Less than 9th Grade, 9th-12th Grade,High School Diploma or Equivalent, Some College or Associate’s Degree, Bachelor’s Degree or Higher. The corresponding values are the percentages of the total number of adults.</p>
+</section>
+</section>
+<section id="the-questions" class="level1">
+<h1>The Questions</h1>
+<ol type="1">
+<li><p>How many green cards are issued annually and to what countries are most of the green cards issued to? I plan to answer this question by pulling the first dataset, and creating a line plot of green card issues year over year to analyze the pattern. Then I will total all the countries over all the given years, and come up with the top 5 countries with the most green cards issued to it’s citizens.</p></li>
+<li><p>What are the trends of state immigration? For this question, I will build a chloropleth where the color of each state will correspond with the state’s immigrant share of total state population in 2022.</p></li>
+<li><p>Does the U.S. have the resources to house refugees (Not Immigrants)? To answer this question I will pull the third dataset and build a line plot with two lines. One line being the number of admitted refugees and the other being the annual ceiling the U.S. government claims that year. It will be interesting to see if the admitted line ever surpasses the annual ceiling, and additional research on what was going on in the world at any of those points would lead to interesting insight.</p></li>
+<li><p>Where are most unauthorized immigrants going when they make it to the U.S.? For this question I will pull the fourth dataset and build a chloropleth map where each state will be colored by it’s estimated number of unauthorized immigrants.</p></li>
+<li><p>Do unaccompied children get released to certain states at higher rates than others? For this question I will pull Dataset 5 and 4 and join them together. By doing this I can create a ratio, unnacompanied children over total estimated unauthorized immigrants by state from 2014-2023. It would be interesting to build a bar chart of the top 3 and bottom 3 states using the ratio I will create.</p></li>
+<li><p>Are their differences in educational attainment of recently arrived immigrants based on what countries they come from? For this question I will pull dataset 6 and focus in on a countries immigrants attainment of a bachelor’s degrees or higher. For this question, I will build a chloropleth world map, and color each country by their percentage of immigrants that attain a bachelor’s degree or higher in the U.S. This will make it possible to quickly compare a large range of countries and make it easy to point out areas that find ample oppurtunity in the U.S. vs those who do not.</p></li>
+</ol>
+</section>
+<section id="data-preprocessing" class="level1">
+<h1>Data Preprocessing</h1>
+<p>Feel free to skip this section if it is not of interest to you. It consists of all imports needed for the analysis and the code cleaning the datasets.</p>
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.figure_factory <span class="im">as</span> ff</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> FuncFormatter</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pycountry_convert <span class="im">as</span> pc</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>education <span class="op">=</span> pd.read_csv(<span class="st">'educational_attainment - Sheet1.csv'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_percent(df, columns):</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> column <span class="kw">in</span> columns:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        df[column] <span class="op">=</span> df[column].<span class="bu">str</span>.replace(<span class="st">'%'</span>, <span class="st">''</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># List of columns to remove '%' from</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>columns_to_remove_percent <span class="op">=</span> [<span class="st">'Less than 9th Grade'</span>, <span class="st">'9th-12th Grade'</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="st">'High School Diploma or Equivalent'</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="st">"Some College or Associate's Degree"</span>, <span class="st">"Bachelor's Degree or Higher"</span>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> remove_percent(education.copy(), columns_to_remove_percent)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>children <span class="op">=</span> pd.read_csv(<span class="st">"Unnacompanied_children - Sheet1.csv"</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>refugees <span class="op">=</span> pd.read_csv(<span class="st">"Refugge_resettlement - Sheet1.csv"</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>immigrant_state <span class="op">=</span> pd.read_csv(<span class="st">"Immigrant_pop_state - Sheet1.csv"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>immigrant_state[<span class="st">'Immigrant Share of Total State Population'</span>] <span class="op">=</span> immigrant_state[<span class="st">'Immigrant Share of Total State Population'</span>].<span class="bu">str</span>.replace(<span class="st">'%'</span>,<span class="st">''</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>legal_country <span class="op">=</span> pd.read_csv(<span class="st">"new_legals_country - Sheet1.csv"</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates <span class="op">=</span> pd.read_csv(<span class="st">"Unauthorized_estimates - Sheet1.csv"</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>] <span class="op">=</span> unauthorized_estimates[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>].<span class="bu">str</span>.replace(<span class="st">'%'</span>,<span class="st">''</span>).astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+</section>
+<section id="the-results" class="level1">
+<h1>The Results</h1>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>legal_country_clean <span class="op">=</span> legal_country.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>legal_country_clean.rename(columns<span class="op">=</span> {<span class="st">'Region/Sub-Region or Country of Birth'</span>:<span class="st">'Country'</span>}, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'1999'</span>, <span class="st">'2000'</span>, <span class="st">'2001'</span>, <span class="st">'2002'</span>, <span class="st">'2003'</span>, <span class="st">'2004'</span>, <span class="st">'2005'</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2006'</span>, <span class="st">'2007'</span>, <span class="st">'2008'</span>, <span class="st">'2009'</span>, <span class="st">'2010'</span>, <span class="st">'2011'</span>, <span class="st">'2012'</span>, <span class="st">'2013'</span>, <span class="st">'2014'</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2015'</span>, <span class="st">'2016'</span>, <span class="st">'2017'</span>, <span class="st">'2018'</span>, <span class="st">'2019'</span>, <span class="st">'2020'</span>, <span class="st">'2021'</span>, <span class="st">'2022'</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>legal_country_clean[cols] <span class="op">=</span> legal_country_clean[cols].<span class="bu">apply</span>(pd.to_numeric, errors<span class="op">=</span><span class="st">'coerce'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>grouped_legal <span class="op">=</span> pd.melt(legal_country_clean, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], value_vars<span class="op">=</span>[<span class="st">'1999'</span>, <span class="st">'2000'</span>, <span class="st">'2001'</span>, <span class="st">'2002'</span>, <span class="st">'2003'</span>, <span class="st">'2004'</span>, <span class="st">'2005'</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2006'</span>, <span class="st">'2007'</span>, <span class="st">'2008'</span>, <span class="st">'2009'</span>, <span class="st">'2010'</span>, <span class="st">'2011'</span>, <span class="st">'2012'</span>, <span class="st">'2013'</span>, <span class="st">'2014'</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2015'</span>, <span class="st">'2016'</span>, <span class="st">'2017'</span>, <span class="st">'2018'</span>, <span class="st">'2019'</span>, <span class="st">'2020'</span>, <span class="st">'2021'</span>, <span class="st">'2022'</span>])</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>val_to_drop <span class="op">=</span> <span class="st">'All Countries (total)'</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>grouped_legal_plot <span class="op">=</span> grouped_legal[grouped_legal[<span class="st">'Country'</span>] <span class="op">!=</span> val_to_drop]</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (grouped_legal[<span class="st">'Country'</span>] <span class="op">==</span> <span class="st">'All Countries (total)'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>group_plot <span class="op">=</span> grouped_legal[mask]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>sns.lineplot(group_plot, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>).<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Year'</span>, ylabel<span class="op">=</span><span class="st">'Number of Green Cards Issued'</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"white"</span>, palette<span class="op">=</span><span class="st">"mako_r"</span>, rc<span class="op">=</span>{<span class="st">"lines.linewidth"</span>: <span class="fl">2.5</span>})</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.gca().xaxis.set_major_locator(plt.MultipleLocator(<span class="dv">5</span>))</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\Max\AppData\Local\Temp\ipykernel_18520\538939859.py:1: FutureWarning:
+
+DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+
+C:\Users\Max\anaconda3\envs\capstone\Lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning:
+
+use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+
+C:\Users\Max\anaconda3\envs\capstone\Lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning:
+
+use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+</code></pre>
+</div>
 <div class="cell-output cell-output-display">
-<div id="fig-polar" class="quarto-figure quarto-figure-center anchored">
+<div id="fig1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="blog_files/figure-html/fig-polar-output-1.png" width="450" height="439" class="figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: A line plot on a polar axis</figcaption><p></p>
+<p><img src="blog_files/figure-html/fig1-output-2.png" width="585" height="458" class="figure-img"></p>
+<figcaption class="figure-caption">Number of Green Cards Admitted by U.S. 1999-2022</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Here’s an example of citing a source <span class="citation" data-cites="phil99">(see <a href="#ref-phil99" role="doc-biblioref">Phillips 1999, 33–35</a>)</span>. Be sure the source information is entered in “BibTeX” form in the <code>references.bib</code> file.</p>
-<p>The bibliography will automatically get generated. Any sources you cite in the document will be included. Other entries in the <code>.bib</code> file will not be included.</p>
+<p>Analyzing this figure, we can see that the number of green cards issued hit a low after 2001, and then spikes until about 2007. After that their is a steady decrease in the number of green cards issued until 2020, where their has been a increase till present day.</p>
+<p>Some possible explanations for these patterns can be the terrorist attack of 9/11 leading to a much more strict border. Also, president Biden’s election into office in 2021 explains the increases we are seeing now. His campaign spoke a lot about letting more immigrants into the country and it is apparent that he and his administration have been keeping their promises.</p>
+<p>The vast majority of these green cards were issued to individuals residing in the Americas as well as Asia. (Not shown in figure)</p>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>state_pivot <span class="op">=</span> pd.pivot_table(immigrant_state, values<span class="op">=</span><span class="st">'Immigrant Share of Total State Population'</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                             index<span class="op">=</span><span class="st">'Country'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>state_from_pivot <span class="op">=</span> state_pivot.reset_index()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>state_from_pivot.rename(columns<span class="op">=</span>{<span class="st">'Country'</span>:<span class="st">'State'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>code <span class="op">=</span> {<span class="st">'Alabama'</span>: <span class="st">'AL'</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Alaska'</span>: <span class="st">'AK'</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Arizona'</span>: <span class="st">'AZ'</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Arkansas'</span>: <span class="st">'AR'</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'California'</span>: <span class="st">'CA'</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Colorado'</span>: <span class="st">'CO'</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Connecticut'</span>: <span class="st">'CT'</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Delaware'</span>: <span class="st">'DE'</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'District of Columbia'</span>: <span class="st">'DC'</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Florida'</span>: <span class="st">'FL'</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Georgia'</span>: <span class="st">'GA'</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Hawaii'</span>: <span class="st">'HI'</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Idaho'</span>: <span class="st">'ID'</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Illinois'</span>: <span class="st">'IL'</span>,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Indiana'</span>: <span class="st">'IN'</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Iowa'</span>: <span class="st">'IA'</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Kansas'</span>: <span class="st">'KS'</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Kentucky'</span>: <span class="st">'KY'</span>,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Louisiana'</span>: <span class="st">'LA'</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Maine'</span>: <span class="st">'ME'</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Maryland'</span>: <span class="st">'MD'</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Massachusetts'</span>: <span class="st">'MA'</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Michigan'</span>: <span class="st">'MI'</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Minnesota'</span>: <span class="st">'MN'</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Mississippi'</span>: <span class="st">'MS'</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Missouri'</span>: <span class="st">'MO'</span>,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Montana'</span>: <span class="st">'MT'</span>,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Nebraska'</span>: <span class="st">'NE'</span>,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Nevada'</span>: <span class="st">'NV'</span>,</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New Hampshire'</span>: <span class="st">'NH'</span>,</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New Jersey'</span>: <span class="st">'NJ'</span>,</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New Mexico'</span>: <span class="st">'NM'</span>,</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New York'</span>: <span class="st">'NY'</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">'North Carolina'</span>: <span class="st">'NC'</span>,</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">'North Dakota'</span>: <span class="st">'ND'</span>,</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Ohio'</span>: <span class="st">'OH'</span>,</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Oklahoma'</span>: <span class="st">'OK'</span>,</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Oregon'</span>: <span class="st">'OR'</span>,</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Pennsylvania'</span>: <span class="st">'PA'</span>,</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Rhode Island'</span>: <span class="st">'RI'</span>,</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">'South Carolina'</span>: <span class="st">'SC'</span>,</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">'South Dakota'</span>: <span class="st">'SD'</span>,</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Tennessee'</span>: <span class="st">'TN'</span>,</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Texas'</span>: <span class="st">'TX'</span>,</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Utah'</span>: <span class="st">'UT'</span>,</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Vermont'</span>: <span class="st">'VT'</span>,</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Virginia'</span>: <span class="st">'VA'</span>,</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Washington'</span>: <span class="st">'WA'</span>,</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>        <span class="st">'West Virginia'</span>: <span class="st">'WV'</span>,</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Wisconsin'</span>: <span class="st">'WI'</span>,</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Wyoming'</span>: <span class="st">'WY'</span>}</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>state_from_pivot[<span class="st">'Code'</span>] <span class="op">=</span> state_from_pivot[<span class="st">'State'</span>].<span class="bu">map</span>(code)</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.choropleth(state_from_pivot, locations<span class="op">=</span><span class="st">'Code'</span>, color<span class="op">=</span>state_from_pivot[<span class="st">'Immigrant Share of Total State Population'</span>],</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>                           color_continuous_scale<span class="op">=</span><span class="st">'greens'</span>,</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>                           locationmode<span class="op">=</span><span class="st">'USA-states'</span>,</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>                           scope<span class="op">=</span><span class="st">"usa"</span>,</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>                          )</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>fig.update_layout(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">800</span>, coloraxis_colorbar<span class="op">=</span><span class="bu">dict</span>(<span class="bu">len</span><span class="op">=</span><span class="fl">0.6</span>),</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>                    coloraxis_colorbar_title<span class="op">=</span><span class="st">'Percent Share'</span>)</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig2" class="cell-output cell-output-display">
+
+<div>                            <div id="70d0880f-f45a-46f7-9a0e-d9bcd36eb230" class="plotly-graph-div" style="height:800px; width:1200px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("70d0880f-f45a-46f7-9a0e-d9bcd36eb230")) {                    Plotly.newPlot(                        "70d0880f-f45a-46f7-9a0e-d9bcd36eb230",                        [{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"Code=%{location}<br>Immigrant Share of Total State Population=%{z}<extra></extra>","locationmode":"USA-states","locations":["AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX",null,"UT","VT","VA","WA","WV","WI","WY"],"name":"","z":[6.766666666666667,8.333333333333334,13.583333333333334,6.816666666666666,25.25,9.316666666666666,13.516666666666666,8.616666666666667,12.183333333333332,17.366666666666664,9.4,15.666666666666666,6.3,11.799999999999999,4.6,4.316666666666666,7.783333333333332,4.05,5.3500000000000005,4.3,12.016666666666666,12.933333333333332,5.716666666666666,6.199999999999999,2.816666666666667,3.6333333333333333,4.816666666666667,5.166666666666667,14.633333333333333,5.483333333333333,17.033333333333335,8.566666666666666,17.933333333333334,5.833333333333333,3.3833333333333333,5.633333333333333,5.1499999999999995,7.916666666666667,5.6000000000000005,11.983333333333334,5.516666666666667,3.1833333333333336,3.6166666666666667,13.616666666666665,12.183333333333332,6.633333333333333,4.1000000000000005,8.9,10.316666666666666,1.8,3.8166666666666664,2.733333333333333],"type":"choropleth"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"center":{},"scope":"usa"},"coloraxis":{"colorbar":{"title":{"text":"Percent Share"},"len":0.6},"colorscale":[[0.0,"rgb(247,252,245)"],[0.125,"rgb(229,245,224)"],[0.25,"rgb(199,233,192)"],[0.375,"rgb(161,217,155)"],[0.5,"rgb(116,196,118)"],[0.625,"rgb(65,171,93)"],[0.75,"rgb(35,139,69)"],[0.875,"rgb(0,109,44)"],[1.0,"rgb(0,68,27)"]]},"legend":{"tracegroupgap":0},"margin":{"t":60},"width":1200,"height":800},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('70d0880f-f45a-46f7-9a0e-d9bcd36eb230');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+<p>Percentages of total state populations that are authorized immigrants</p>
+</div>
+</div>
+<p>Analyzing this figure, we can see that there are larger immigrant populations alongside the southern border, which makes sense as it is less difference to travel for immigrants coming from the Americas, which previously stated is the largest group in which immigrants are coming from.</p>
+<p>Their are hotspots in Florida and some North Eastern states like New York and New Jersey which is suprising because these states require quite the transit from the southern border. An explanantion for these number could be that these states offer the most oppurtunity for migrants.</p>
+<p>When examing the northern border, we can see a lot of cold spots. This makes sense as they are the farthest states from our southern border.</p>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>refugees_clean <span class="op">=</span> refugees.drop(<span class="bu">range</span>(<span class="dv">5</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>refugees_clean <span class="op">=</span> refugees_clean.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>columns_to_float <span class="op">=</span> [<span class="st">'Annual Ceiling'</span>, <span class="st">'Number of Admitted Refugees'</span>]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>refugees_clean[columns_to_float] <span class="op">=</span> refugees_clean[columns_to_float].astype(<span class="bu">float</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>refugees_melted <span class="op">=</span> pd.melt(refugees_clean, id_vars<span class="op">=</span><span class="st">'Year'</span>, var_name<span class="op">=</span><span class="st">'Variable'</span>, value_name<span class="op">=</span><span class="st">'Value'</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>group_plot_2 <span class="op">=</span> group_plot</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>group_plot_2.rename(columns <span class="op">=</span> {<span class="st">'variable'</span>:<span class="st">'Year'</span>, <span class="st">'Country'</span>:<span class="st">'Variable'</span>, <span class="st">'value'</span>:<span class="st">'Value'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>line_plot_final <span class="op">=</span> pd.concat([group_plot_2, refugees_melted])</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>line_plot_final.sort_values(by<span class="op">=</span><span class="st">'Year'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Set style and palette</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"white"</span>, palette<span class="op">=</span><span class="st">"mako_r"</span>, rc<span class="op">=</span>{<span class="st">"lines.linewidth"</span>: <span class="fl">2.5</span>})</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure and axis</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>fig, ax1 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the main line plot on the primary y-axis</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>line_plot <span class="op">=</span> sns.lineplot(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Value'</span>, hue<span class="op">=</span><span class="st">'Variable'</span>, data<span class="op">=</span>line_plot_final[line_plot_final[<span class="st">'Variable'</span>] <span class="op">!=</span> <span class="st">'All Countries (total)'</span>], ax<span class="op">=</span>ax1, palette<span class="op">=</span><span class="st">'mako'</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Set primary y-axis labels and title</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>line_plot.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Year'</span>, ylabel<span class="op">=</span><span class="st">'Admitted Refugees'</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major locator</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>line_plot.xaxis.set_major_locator(plt.MultipleLocator(<span class="dv">5</span>))</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Rotate x-axis labels</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Format y-axis labels with commasSS</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>line_plot.yaxis.set_major_formatter(FuncFormatter(<span class="kw">lambda</span> x, _: <span class="st">'{:,}'</span>.<span class="bu">format</span>(<span class="bu">int</span>(x))))</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\Max\AppData\Local\Temp\ipykernel_18520\2703807399.py:3: FutureWarning:
+
+DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+
+C:\Users\Max\anaconda3\envs\capstone\Lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning:
+
+use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+
+C:\Users\Max\anaconda3\envs\capstone\Lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning:
+
+use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="blog_files/figure-html/fig3-output-2.png" width="849" height="528" class="figure-img"></p>
+<figcaption class="figure-caption">Count of refugee admissions compared with refugee capacity</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To further explain the blue line, this “annual ceiling” is a government reported figure going into the year from the president in consultation with congress.</p>
+<p>The number of admitted refugees and annual ceiling follow a similiar pattern until 2020. After 2020 their is not even close to as many refugees coming into the country as the country proclaimed it would be able to take. Their is no concrete explanation for these numbers, but one idea could be that since immigration numbers follow the same pattern under the same time period as the increase in the ceiling (not shown in figure), that the government wanted to have more funds to support the influx of immigrants, and were pulling some of those funds from their refugee budget. (This is just a conspiracy I thought of and I have no way of confirming this)</p>
+</section>
+</section>
+<section id="question-4" class="level1">
+<h1>Question 4</h1>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates[<span class="st">'Code'</span>] <span class="op">=</span> unauthorized_estimates[<span class="st">'State'</span>].<span class="bu">map</span>(code)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates <span class="op">=</span> unauthorized_estimates.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates[<span class="st">'Number of Unauthorized Immigrants'</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>value_to_drop <span class="op">=</span> <span class="st">'United States'</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>pie_plot <span class="op">=</span> unauthorized_estimates[unauthorized_estimates[<span class="st">'State'</span>] <span class="op">!=</span> value_to_drop]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Select top 5 rows and sum the rest</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>top_5 <span class="op">=</span> pie_plot.head(<span class="dv">5</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>other <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'State'</span>: [<span class="st">'All Other States'</span>],</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>: [pie_plot[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>][<span class="dv">5</span>:].<span class="bu">sum</span>()]</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate top 5 and 'Other'</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([top_5, other])</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [(<span class="dv">144</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">238</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">144</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">152</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">251</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">152</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">193</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">193</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">193</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">193</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">204</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">204</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">211</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">211</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">211</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">220</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">220</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">220</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">230</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">230</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">250</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">240</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">248</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">245</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">245</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">220</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">250</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">250</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">210</span><span class="op">/</span><span class="dv">255</span>)]</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co"># o block (250/255, 250/255, 210/255)</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>explode <span class="op">=</span> [<span class="fl">0.1</span> <span class="cf">if</span> df[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>][i] <span class="op">==</span> <span class="bu">max</span>(df[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>]) <span class="cf">else</span> <span class="dv">0</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(df))]</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>plt.pie(df[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>], labels<span class="op">=</span>df[<span class="st">'State'</span>], autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">140</span>, explode<span class="op">=</span>explode, colors<span class="op">=</span>colors)</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)  <span class="co"># Equal aspect ratio ensures that pie is drawn as a circle.</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\Max\AppData\Local\Temp\ipykernel_18520\3736740717.py:3: FutureWarning:
+
+DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="blog_files/figure-html/fig4-output-2.png" width="766" height="611" class="figure-img"></p>
+<figcaption class="figure-caption">Estimated distribution of unauthorized immigrants over the U.S. (top 5 states)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Under the assumption that these estimates are accurate, about 60 percent of the total illegal immigrant population settile in just 5 states. This is a huge disparity and can help to explain why some major city’s are crying out for help over the immigration crisis and dealing with major homelessness issues.</p>
+<p>The distribution cannot be so skewed with these numbers. Citizens of the cities, the cities themselves and even the illegal immigrants will all suffer because of these large disparity. It would be a good idea for policy makers to attempt to more evenly distribute these numbers in order to lighten the burden on these 5 states as well as help these immigrants find more oppurtunity in less populated areas.</p>
+</section>
+<section id="question-5" class="level1">
+<h1>Question 5</h1>
+<div id="fig5" class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>children_clean <span class="op">=</span> children.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>columns_to_float_2 <span class="op">=</span> [<span class="st">'FY 2014'</span>, <span class="st">'FY 2015'</span>, <span class="st">'FY 2016'</span>, <span class="st">'FY 2017'</span>, <span class="st">'FY 2018'</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">'FY 2019'</span>, <span class="st">'FY 2020'</span>, <span class="st">'FY 2021'</span>, <span class="st">'FY 2022'</span>, <span class="st">'FY 2023 YTD*'</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="st">'FY 2014 - 2023 YTD* Total'</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>children_clean.replace(<span class="st">'-'</span>, <span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>children_clean[columns_to_float_2] <span class="op">=</span> children_clean[columns_to_float_2].astype(<span class="bu">float</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>merged_children <span class="op">=</span> pd.merge(children_clean, unauthorized_estimates[[<span class="st">'State'</span>,<span class="st">'Number of Unauthorized Immigrants'</span>]], on<span class="op">=</span><span class="st">'State'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>merged_children[<span class="st">'Number of Unauthorized Immigrants'</span>] <span class="op">=</span> merged_children[<span class="st">'Number of Unauthorized Immigrants'</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>merged_children[<span class="st">'Ratio'</span>] <span class="op">=</span> (merged_children[<span class="st">'FY 2014 - 2023 YTD* Total'</span>] <span class="op">/</span> merged_children[<span class="st">'Number of Unauthorized Immigrants'</span>])</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>merged_children.sort_values(by<span class="op">=</span>[<span class="st">'Ratio'</span>], ascending<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>top_3_children <span class="op">=</span> merged_children.head(<span class="dv">3</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>bottom_3_children <span class="op">=</span> merged_children.tail(<span class="dv">8</span>).iloc[<span class="op">-</span><span class="dv">7</span>:<span class="op">-</span><span class="dv">4</span>]</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>children_graph <span class="op">=</span> pd.concat([top_3_children,bottom_3_children], axis<span class="op">=</span><span class="dv">0</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>sns.barplot(children_graph, x<span class="op">=</span><span class="st">'State'</span>, y<span class="op">=</span><span class="st">'Ratio'</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\Max\AppData\Local\Temp\ipykernel_18520\2082781839.py:1: FutureWarning:
+
+DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+</code></pre>
+</div>
+<div id="fig5-1" class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>(array([0, 1, 2, 3, 4, 5]),
+ [Text(0, 0, 'Louisiana'),
+  Text(1, 0, 'South Dakota'),
+  Text(2, 0, 'Alabama'),
+  Text(3, 0, 'Arizona'),
+  Text(4, 0, 'Vermont'),
+  Text(5, 0, 'New Mexico')])</code></pre>
+<p>Top and Bottom 3 States by ratio of children taken in to illegal immigrants taken in</p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="blog_files/figure-html/fig5-output-3.png" id="fig5-2" width="601" height="494"></p>
+</div>
+</div>
+<p>For this figure, I combined the number of illegal immigrants in each state as well as each states number of unnacompanied children that have been sent there.</p>
+<p>The top 3 states, Louisiana, South Dakota and Alabama all have low total immigrant populations. This is an interesting insight and possibly show cases that these states are more partial to taking in children.</p>
+<p>The bottom 3 states, Arizona, Vermont and New Mexico are also interesting because of how low their ratio is.</p>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'Some_college_degree'</span>] <span class="op">=</span> df_cleaned[<span class="st">'Some College or Associate</span><span class="ch">\'</span><span class="st">s Degree'</span>] <span class="op">+</span> df_cleaned[<span class="st">'Bachelor</span><span class="ch">\'</span><span class="st">s Degree or Higher'</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df_cleaned.sort_values(<span class="st">'Some_college_degree'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>df_cleaned.replace({<span class="st">'Korea'</span>:<span class="st">'South Korea'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to get continent from country name</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_continent(country):</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        country_code <span class="op">=</span> pc.country_name_to_country_alpha2(country, cn_name_format<span class="op">=</span><span class="st">"default"</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        continent_code <span class="op">=</span> pc.country_alpha2_to_continent_code(country_code)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        continent_name <span class="op">=</span> pc.convert_continent_code_to_continent_name(continent_code)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> continent_name</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">KeyError</span>:</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add continent column to DataFrame</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'Continent'</span>] <span class="op">=</span> df_cleaned[<span class="st">'Country'</span>].<span class="bu">apply</span>(get_continent)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>df_cleaned.sort_values(<span class="st">'Some_college_degree'</span>, ascending<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>education_top_5 <span class="op">=</span> df_cleaned.head(<span class="dv">10</span>)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>education_bot_5 <span class="op">=</span> df_cleaned.tail(<span class="dv">10</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> (education_top_5, education_bot_5)</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>education_plot <span class="op">=</span> pd.concat(frames)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the figure size</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Define colors for each continent</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>continent_colors <span class="op">=</span> {<span class="st">'Asia'</span>: <span class="st">'yellowgreen'</span>, <span class="st">'Europe'</span>: <span class="st">'teal'</span>, <span class="st">'Africa'</span>: <span class="st">'mediumblue'</span>, <span class="st">'North America'</span>: <span class="st">'gold'</span>, <span class="st">'South America'</span>: <span class="st">'blueviolet'</span>, <span class="st">'Oceania'</span>: <span class="st">'brown'</span>}</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>bar_plot <span class="op">=</span> plt.barh(education_plot[<span class="st">'Country'</span>], education_plot[<span class="st">'Some_college_degree'</span>], color<span class="op">=</span>[continent_colors[cont] <span class="cf">for</span> cont <span class="kw">in</span> education_plot[<span class="st">'Continent'</span>]])</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Set xlabel</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Percentage of Immigrants that Attained College Degree'</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Add legend for continent colors</span></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>plt.legend(handles<span class="op">=</span>[plt.Rectangle((<span class="dv">0</span>,<span class="dv">0</span>),<span class="dv">1</span>,<span class="dv">1</span>, color<span class="op">=</span>continent_colors[cont], label<span class="op">=</span>cont) <span class="cf">for</span> cont <span class="kw">in</span> education_plot[<span class="st">'Continent'</span>].unique()])</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\Max\anaconda3\envs\capstone\Lib\site-packages\pycountry\db.py:51: UserWarning:
+
+Country's official_name not found. Country name provided instead.
+
+C:\Users\Max\anaconda3\envs\capstone\Lib\site-packages\pycountry\db.py:51: UserWarning:
+
+Country's common_name not found. Country name provided instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="blog_files/figure-html/fig6-output-2.png" width="1029" height="509" class="figure-img"></p>
+<figcaption class="figure-caption">Top and bottom 10 countries by college degree attainment percentages</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>When looking at the countries with the highest percentage of immigrants attaining a college degree in the U.S., we can see that none of those countries are in either North or South America. In contrast, 90 percent of countries with the lowest percentage are from the Americas.</p>
+<p>I believe this points out a big problem. Immigrants coming though our southern border have a signifigantly lower chance of getting a college degree in comparison to immigrants coming from countries in Europe and Asia. I think policy makers should use this data and take some steps to try and bridge this gap in order to create more oppurtunity for under represented immigrant groups in our higher education system.</p>
+</section>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<p>I hope that you learned something new while reading through my blog post!</p>
+<p>Here are the key insights from this project all wrapped up:</p>
+<ul>
+<li>The number of green cards being issued is on the rise.</li>
+<li>Largest immigrant populations along sothern border with hotspots in CA, FL, NY and NJ.</li>
+<li>We are declaring a need for way more refugees than we are actually taking in.</li>
+<li>60% of estimated illegal immigrants settle in just 5 states (CA, TX, NY, FL, NJ)</li>
+<li>Some countries show evidence of possible favoritism toward child immigrants</li>
+<li>Huge disparities between immigrants countries of origin and their success in U.S. higher education system.</li>
+</ul>
+</section>
+<section id="future-work" class="level1">
+<h1>Future Work</h1>
+<p>Some ideas I had to continue this project but did not have time for are:</p>
+<ol type="1">
+<li>To build a time series model to predict future legal and illegal immigration trends.</li>
+<li>Explore data pertaining to immigrants in the U.S. workforce.</li>
+<li>Explore correlation between immigration trends and which political parties were in office.</li>
+<li>Compare immigration trends and economic data year over year.</li>
+<li>Analyze deporation data.</li>
+</ol>
 <!-- -->
 
-
-</section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-phil99" class="csl-entry" role="doc-biblioentry">
-Phillips, T. P. 1999. <span>“Possible Influence of the Magnetosphere on <span>American</span> History.”</span> <em>J. Oddball Res.</em> 98: 1000–1003.
-</div>
-</div></section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -268,9 +750,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -386,6 +882,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -425,75 +1007,484 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My awesome blog"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Spring 2023"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Prof. Yuster"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: default</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">    rendering: embed-resources</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="al">![Source: Ramapo College of New Jersey](https://www.ramapo.edu/tours/wp-content/uploads/sites/344/2020/10/Fall-Arch-Straigh-Edit.jpg)</span>{fig-alt="A photo of the arch at Ramapo College."}</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># Welcome</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>**Welcome** to *my* ~~super~~ SUPER awesome <span class="in">`blog`</span> post!</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>$$x^2 = 1$$</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto is cool</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>This section was copy/pasted from various parts of the <span class="co">[</span><span class="ot">Quarto website</span><span class="co">](https://quarto.org/docs/get-started/hello/vscode.html)</span>.</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>Note that there are five types of callouts, including:</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">`note`</span>, <span class="in">`tip`</span>, <span class="in">`warning`</span>, <span class="in">`caution`</span>, and <span class="in">`important`</span>.</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tip With Caption</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>This is an example of a callout with a caption.</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>For your reference, here's an example of a Python code cell in Quarto, along with a figure that gets generated, along with a caption and a label so that it can be referred to automatically as "Figure 1" (or whatever) in the writeup.</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>For a demonstration of a line plot on a polar axis, see @fig-polar.</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-polar</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "A line plot on a polar axis"</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>Here's an example of citing a source <span class="co">[</span><span class="ot">see @phil99, pp. 33-35</span><span class="co">]</span>. Be sure the source information is entered in "BibTeX" form in the <span class="in">`references.bib`</span> file.</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>The bibliography will automatically get generated. Any sources you cite in the document will be included. Other entries in the <span class="in">`.bib`</span> file will not be included.</span>
+<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Navigating the Complexities of U.S. Migration"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Spring 2024"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Maxwell Bilyk"</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: default</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">    rendering: embed-resources</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="al">![Source: Forbes](https://imageio.forbes.com/specials-images/imageserve/1132026265/Illustration-of-USA-immigration/0x0.jpg?format=jpg&amp;crop=8176,4013,x0,y391,safe&amp;width=1440)</span>{fig-alt="U.S. flag with migrants"}</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># Background</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>My inspiration for this research came from a discomfort of being naive to the subject of immigration in my own country. All I hear about on the news is immigration. Some news channels tell me that it is ruining our country and we need to close the borders. Other sources tell me that we aren't doing enough as a country to support immigrants and that they could really beneift our country if we allocated resources correctly to implement them smoothly into our society.</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>I wanted to be able to make my own conclusions, so I sought out concrete data pertaining to U.S. immigration, and began my analysis.</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>This project aims to uncover the patterns of immigration over time, observe areas where immigrants are residing, and highlight disparities between the educational attainment of immigrants based on their country of origin.</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>The findings from this project could potentially be used by U.S. policymakers to help them make more informed decisions regarding U.S. immigration.</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Data</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>The data used for this project comes from <span class="co">[</span><span class="ot">The Nonpartisan Migration Policy Institute</span><span class="co">](https://www.migrationpolicy.org/programs/data-hub/us-immigration-trends?gad_source=1&amp;gclid=CjwKCAiAivGuBhBEEiwAWiFmYbxFPH7H1xkFCmwWRPyeHY8k87cMI-NkOL9lygAPqFa7ppdZx1vOxxoC88YQAvD_BwE)</span>. This orginization is an independent group that seeks to improve immigration and integration policies in the U.S. through research and analysis of data.</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>This was the perfect source of data for me. Through my background research I found so many biased and unproffesional sources that were publishing immigration data, and I did not want to include their data in my project.</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>In total, I worked with six datasets.</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset 1</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>A dataset that has the annual number of new legal permanent residents by country of birth, from the years 1999-2022. A single row represents a given country, and a column represnts the number of new legal immigrants from that given year.</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset 2</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>A dataset that holds information on the immigrant population by state from 1990, 2000, 2010,2019, 2021, 2022. Each row represents a state in the U.S. in one of the given years, and the columns are features like, total population, immigrant population and share of total state population in those given years.</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset 3</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>A dataset that holds information on U.S. annual refugee resettlement ceiling and annual number of admitted refigees from the years 1975-2024. Each row represents a given year, and that years annual resettlement ceiling and the number of admitted refugees.</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset 4</span></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>A dataset that holds information on the National and State estimates of the unnathorized immigrant population from 2015 to 2019 (totals, not year over year). Each row represents a given state, their estimated number of unathorized immigrants and the state share of unauthorized immigrant population.</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset 5</span></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>A dataset that holds information on the number of unaccompanied children released to sponsors by state from fiscal years 2014-2023. Each row represents a given state, and the columns represnt the years, and the associated values are the number of unaccompanied children.</span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset 6</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>A dataset that holds information on the educational attainment of recently arrived immigrants (ages 25 and over) by country of birth as of 2022. A single row represents a given country, and the different columns are Number of Adults, Less than 9th Grade, 9th-12th Grade,High School Diploma or Equivalent, Some College or Associate's Degree, Bachelor's Degree or Higher. The corresponding values are the percentages of the total number of adults.</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Questions</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>How many green cards are issued annually and to what countries are most of the green cards issued to? I plan to answer this question by pulling the first dataset, and creating a line plot of green card issues year over year to analyze the pattern. Then I will total all the countries over all the given years, and come up with the top 5 countries with the most green cards issued to it's citizens.</span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>What are the trends of state immigration? For this question, I will build a chloropleth where the color of each state will correspond with the state's immigrant share of total state population in 2022.</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Does the U.S. have the resources to house refugees (Not Immigrants)? To answer this question I will pull the third dataset and build a line plot with two lines. One line being the number of admitted refugees and the other being the annual ceiling the U.S. government claims that year. It will be interesting to see if the admitted line ever surpasses the annual ceiling, and additional research on what was going on in the world at any of those points would lead to interesting insight.</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Where are most unauthorized immigrants going when they make it to the U.S.? For this question I will pull the fourth dataset and build a chloropleth map where each state will be colored by it's estimated number of unauthorized immigrants.</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Do unaccompied children get released to certain states at higher rates than others? For this question I will pull Dataset 5 and 4 and join them together. By doing this I can create a ratio, unnacompanied children over total estimated unauthorized immigrants by state from 2014-2023. It would be interesting to build a bar chart of the top 3 and bottom 3 states using the ratio I will create.</span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Are their differences in educational attainment of recently arrived immigrants based on what countries they come from? For this question I will pull dataset 6 and focus in on a countries immigrants attainment of a bachelor's degrees or higher. For this question, I will build a chloropleth world map, and color each country by their percentage of immigrants that attain a bachelor's degree or higher in the U.S. This will make it possible to quickly compare a large range of countries and make it easy to point out areas that find ample oppurtunity in the U.S. vs those who do not.</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Preprocessing</span></span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>Feel free to skip this section if it is not of interest to you. It consists of all imports needed for the analysis and the code cleaning the datasets.</span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.figure_factory <span class="im">as</span> ff</span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> FuncFormatter</span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pycountry_convert <span class="im">as</span> pc</span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a>education <span class="op">=</span> pd.read_csv(<span class="st">'educational_attainment - Sheet1.csv'</span>)</span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_percent(df, columns):</span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> column <span class="kw">in</span> columns:</span>
+<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a>        df[column] <span class="op">=</span> df[column].<span class="bu">str</span>.replace(<span class="st">'%'</span>, <span class="st">''</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a><span class="co"># List of columns to remove '%' from</span></span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a>columns_to_remove_percent <span class="op">=</span> [<span class="st">'Less than 9th Grade'</span>, <span class="st">'9th-12th Grade'</span>,</span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a>       <span class="st">'High School Diploma or Equivalent'</span>,</span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a>       <span class="st">"Some College or Associate's Degree"</span>, <span class="st">"Bachelor's Degree or Higher"</span>]</span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function</span></span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> remove_percent(education.copy(), columns_to_remove_percent)</span>
+<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a>children <span class="op">=</span> pd.read_csv(<span class="st">"Unnacompanied_children - Sheet1.csv"</span>)</span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a>refugees <span class="op">=</span> pd.read_csv(<span class="st">"Refugge_resettlement - Sheet1.csv"</span>)</span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a>immigrant_state <span class="op">=</span> pd.read_csv(<span class="st">"Immigrant_pop_state - Sheet1.csv"</span>)</span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a>immigrant_state[<span class="st">'Immigrant Share of Total State Population'</span>] <span class="op">=</span> immigrant_state[<span class="st">'Immigrant Share of Total State Population'</span>].<span class="bu">str</span>.replace(<span class="st">'%'</span>,<span class="st">''</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>legal_country <span class="op">=</span> pd.read_csv(<span class="st">"new_legals_country - Sheet1.csv"</span>)</span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates <span class="op">=</span> pd.read_csv(<span class="st">"Unauthorized_estimates - Sheet1.csv"</span>)</span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>] <span class="op">=</span> unauthorized_estimates[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>].<span class="bu">str</span>.replace(<span class="st">'%'</span>,<span class="st">''</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Results</span></span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 1</span></span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig1</span></span>
+<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Number of Green Cards Admitted by U.S. 1999-2022"</span></span>
+<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a>legal_country_clean <span class="op">=</span> legal_country.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a>legal_country_clean.rename(columns<span class="op">=</span> {<span class="st">'Region/Sub-Region or Country of Birth'</span>:<span class="st">'Country'</span>}, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'1999'</span>, <span class="st">'2000'</span>, <span class="st">'2001'</span>, <span class="st">'2002'</span>, <span class="st">'2003'</span>, <span class="st">'2004'</span>, <span class="st">'2005'</span>,</span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2006'</span>, <span class="st">'2007'</span>, <span class="st">'2008'</span>, <span class="st">'2009'</span>, <span class="st">'2010'</span>, <span class="st">'2011'</span>, <span class="st">'2012'</span>, <span class="st">'2013'</span>, <span class="st">'2014'</span>,</span>
+<span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2015'</span>, <span class="st">'2016'</span>, <span class="st">'2017'</span>, <span class="st">'2018'</span>, <span class="st">'2019'</span>, <span class="st">'2020'</span>, <span class="st">'2021'</span>, <span class="st">'2022'</span>]</span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a>legal_country_clean[cols] <span class="op">=</span> legal_country_clean[cols].<span class="bu">apply</span>(pd.to_numeric, errors<span class="op">=</span><span class="st">'coerce'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a>grouped_legal <span class="op">=</span> pd.melt(legal_country_clean, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], value_vars<span class="op">=</span>[<span class="st">'1999'</span>, <span class="st">'2000'</span>, <span class="st">'2001'</span>, <span class="st">'2002'</span>, <span class="st">'2003'</span>, <span class="st">'2004'</span>, <span class="st">'2005'</span>,</span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2006'</span>, <span class="st">'2007'</span>, <span class="st">'2008'</span>, <span class="st">'2009'</span>, <span class="st">'2010'</span>, <span class="st">'2011'</span>, <span class="st">'2012'</span>, <span class="st">'2013'</span>, <span class="st">'2014'</span>,</span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a>       <span class="st">'2015'</span>, <span class="st">'2016'</span>, <span class="st">'2017'</span>, <span class="st">'2018'</span>, <span class="st">'2019'</span>, <span class="st">'2020'</span>, <span class="st">'2021'</span>, <span class="st">'2022'</span>])</span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a>val_to_drop <span class="op">=</span> <span class="st">'All Countries (total)'</span></span>
+<span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a>grouped_legal_plot <span class="op">=</span> grouped_legal[grouped_legal[<span class="st">'Country'</span>] <span class="op">!=</span> val_to_drop]</span>
+<span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (grouped_legal[<span class="st">'Country'</span>] <span class="op">==</span> <span class="st">'All Countries (total)'</span>)</span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a>group_plot <span class="op">=</span> grouped_legal[mask]</span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a>sns.lineplot(group_plot, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>).<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Year'</span>, ylabel<span class="op">=</span><span class="st">'Number of Green Cards Issued'</span>)</span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"white"</span>, palette<span class="op">=</span><span class="st">"mako_r"</span>, rc<span class="op">=</span>{<span class="st">"lines.linewidth"</span>: <span class="fl">2.5</span>})</span>
+<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a>plt.gca().xaxis.set_major_locator(plt.MultipleLocator(<span class="dv">5</span>))</span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-160"><a href="#cb14-160" aria-hidden="true" tabindex="-1"></a>Analyzing this figure, we can see that the number of green cards issued hit a low after 2001, and then spikes until about 2007. After that their is a steady decrease in the number of green cards issued until 2020, where their has been a increase till present day.</span>
+<span id="cb14-161"><a href="#cb14-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a>Some possible explanations for these patterns can be the terrorist attack of 9/11 leading to a much more strict border. Also, president Biden's election into office in 2021 explains the increases we are seeing now. His campaign spoke a lot about letting more immigrants into the country and it is apparent that he and his administration have been keeping their promises.</span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a>The vast majority of these green cards were issued to individuals residing in the Americas as well as Asia. (Not shown in figure)</span>
+<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 2</span></span>
+<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig2</span></span>
+<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Percentages of total state populations that are authorized immigrants"</span></span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a>state_pivot <span class="op">=</span> pd.pivot_table(immigrant_state, values<span class="op">=</span><span class="st">'Immigrant Share of Total State Population'</span>,</span>
+<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a>                             index<span class="op">=</span><span class="st">'Country'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb14-176"><a href="#cb14-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a>state_from_pivot <span class="op">=</span> state_pivot.reset_index()</span>
+<span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a>state_from_pivot.rename(columns<span class="op">=</span>{<span class="st">'Country'</span>:<span class="st">'State'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a>code <span class="op">=</span> {<span class="st">'Alabama'</span>: <span class="st">'AL'</span>,</span>
+<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Alaska'</span>: <span class="st">'AK'</span>,</span>
+<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Arizona'</span>: <span class="st">'AZ'</span>,</span>
+<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Arkansas'</span>: <span class="st">'AR'</span>,</span>
+<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a>        <span class="st">'California'</span>: <span class="st">'CA'</span>,</span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Colorado'</span>: <span class="st">'CO'</span>,</span>
+<span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Connecticut'</span>: <span class="st">'CT'</span>,</span>
+<span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Delaware'</span>: <span class="st">'DE'</span>,</span>
+<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a>        <span class="st">'District of Columbia'</span>: <span class="st">'DC'</span>,</span>
+<span id="cb14-189"><a href="#cb14-189" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Florida'</span>: <span class="st">'FL'</span>,</span>
+<span id="cb14-190"><a href="#cb14-190" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Georgia'</span>: <span class="st">'GA'</span>,</span>
+<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Hawaii'</span>: <span class="st">'HI'</span>,</span>
+<span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Idaho'</span>: <span class="st">'ID'</span>,</span>
+<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Illinois'</span>: <span class="st">'IL'</span>,</span>
+<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Indiana'</span>: <span class="st">'IN'</span>,</span>
+<span id="cb14-195"><a href="#cb14-195" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Iowa'</span>: <span class="st">'IA'</span>,</span>
+<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Kansas'</span>: <span class="st">'KS'</span>,</span>
+<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Kentucky'</span>: <span class="st">'KY'</span>,</span>
+<span id="cb14-198"><a href="#cb14-198" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Louisiana'</span>: <span class="st">'LA'</span>,</span>
+<span id="cb14-199"><a href="#cb14-199" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Maine'</span>: <span class="st">'ME'</span>,</span>
+<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Maryland'</span>: <span class="st">'MD'</span>,</span>
+<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Massachusetts'</span>: <span class="st">'MA'</span>,</span>
+<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Michigan'</span>: <span class="st">'MI'</span>,</span>
+<span id="cb14-203"><a href="#cb14-203" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Minnesota'</span>: <span class="st">'MN'</span>,</span>
+<span id="cb14-204"><a href="#cb14-204" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Mississippi'</span>: <span class="st">'MS'</span>,</span>
+<span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Missouri'</span>: <span class="st">'MO'</span>,</span>
+<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Montana'</span>: <span class="st">'MT'</span>,</span>
+<span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Nebraska'</span>: <span class="st">'NE'</span>,</span>
+<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Nevada'</span>: <span class="st">'NV'</span>,</span>
+<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New Hampshire'</span>: <span class="st">'NH'</span>,</span>
+<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New Jersey'</span>: <span class="st">'NJ'</span>,</span>
+<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New Mexico'</span>: <span class="st">'NM'</span>,</span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a>        <span class="st">'New York'</span>: <span class="st">'NY'</span>,</span>
+<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a>        <span class="st">'North Carolina'</span>: <span class="st">'NC'</span>,</span>
+<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a>        <span class="st">'North Dakota'</span>: <span class="st">'ND'</span>,</span>
+<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Ohio'</span>: <span class="st">'OH'</span>,</span>
+<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Oklahoma'</span>: <span class="st">'OK'</span>,</span>
+<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Oregon'</span>: <span class="st">'OR'</span>,</span>
+<span id="cb14-218"><a href="#cb14-218" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Pennsylvania'</span>: <span class="st">'PA'</span>,</span>
+<span id="cb14-219"><a href="#cb14-219" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Rhode Island'</span>: <span class="st">'RI'</span>,</span>
+<span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a>        <span class="st">'South Carolina'</span>: <span class="st">'SC'</span>,</span>
+<span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a>        <span class="st">'South Dakota'</span>: <span class="st">'SD'</span>,</span>
+<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Tennessee'</span>: <span class="st">'TN'</span>,</span>
+<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Texas'</span>: <span class="st">'TX'</span>,</span>
+<span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Utah'</span>: <span class="st">'UT'</span>,</span>
+<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Vermont'</span>: <span class="st">'VT'</span>,</span>
+<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Virginia'</span>: <span class="st">'VA'</span>,</span>
+<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Washington'</span>: <span class="st">'WA'</span>,</span>
+<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a>        <span class="st">'West Virginia'</span>: <span class="st">'WV'</span>,</span>
+<span id="cb14-229"><a href="#cb14-229" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Wisconsin'</span>: <span class="st">'WI'</span>,</span>
+<span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Wyoming'</span>: <span class="st">'WY'</span>}</span>
+<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a>state_from_pivot[<span class="st">'Code'</span>] <span class="op">=</span> state_from_pivot[<span class="st">'State'</span>].<span class="bu">map</span>(code)</span>
+<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.choropleth(state_from_pivot, locations<span class="op">=</span><span class="st">'Code'</span>, color<span class="op">=</span>state_from_pivot[<span class="st">'Immigrant Share of Total State Population'</span>],</span>
+<span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a>                           color_continuous_scale<span class="op">=</span><span class="st">'greens'</span>,</span>
+<span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a>                           locationmode<span class="op">=</span><span class="st">'USA-states'</span>,</span>
+<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a>                           scope<span class="op">=</span><span class="st">"usa"</span>,</span>
+<span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a>                          )</span>
+<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a>fig.update_layout(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">800</span>, coloraxis_colorbar<span class="op">=</span><span class="bu">dict</span>(<span class="bu">len</span><span class="op">=</span><span class="fl">0.6</span>),</span>
+<span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a>                    coloraxis_colorbar_title<span class="op">=</span><span class="st">'Percent Share'</span>)</span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-245"><a href="#cb14-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-246"><a href="#cb14-246" aria-hidden="true" tabindex="-1"></a>Analyzing this figure, we can see that there are larger immigrant populations alongside the southern border, which makes sense as it is less difference to travel for immigrants coming from the Americas, which previously stated is the largest group in which immigrants are coming from.</span>
+<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a>Their are hotspots in Florida and some North Eastern states like New York and New Jersey which is suprising because these states require quite the transit from the southern border. An explanantion for these number could be that these states offer the most oppurtunity for migrants.</span>
+<span id="cb14-249"><a href="#cb14-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-250"><a href="#cb14-250" aria-hidden="true" tabindex="-1"></a>When examing the northern border, we can see a lot of cold spots. This makes sense as they are the farthest states from our southern border.</span>
+<span id="cb14-251"><a href="#cb14-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 3</span></span>
+<span id="cb14-253"><a href="#cb14-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-256"><a href="#cb14-256" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-257"><a href="#cb14-257" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig3</span></span>
+<span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Count of refugee admissions compared with refugee capacity"</span></span>
+<span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a>refugees_clean <span class="op">=</span> refugees.drop(<span class="bu">range</span>(<span class="dv">5</span>))</span>
+<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a>refugees_clean <span class="op">=</span> refugees_clean.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-264"><a href="#cb14-264" aria-hidden="true" tabindex="-1"></a>columns_to_float <span class="op">=</span> [<span class="st">'Annual Ceiling'</span>, <span class="st">'Number of Admitted Refugees'</span>]</span>
+<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a>refugees_clean[columns_to_float] <span class="op">=</span> refugees_clean[columns_to_float].astype(<span class="bu">float</span>)</span>
+<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a>refugees_melted <span class="op">=</span> pd.melt(refugees_clean, id_vars<span class="op">=</span><span class="st">'Year'</span>, var_name<span class="op">=</span><span class="st">'Variable'</span>, value_name<span class="op">=</span><span class="st">'Value'</span>)</span>
+<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a>group_plot_2 <span class="op">=</span> group_plot</span>
+<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a>group_plot_2.rename(columns <span class="op">=</span> {<span class="st">'variable'</span>:<span class="st">'Year'</span>, <span class="st">'Country'</span>:<span class="st">'Variable'</span>, <span class="st">'value'</span>:<span class="st">'Value'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a>line_plot_final <span class="op">=</span> pd.concat([group_plot_2, refugees_melted])</span>
+<span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a>line_plot_final.sort_values(by<span class="op">=</span><span class="st">'Year'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-277"><a href="#cb14-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-278"><a href="#cb14-278" aria-hidden="true" tabindex="-1"></a><span class="co"># Set style and palette</span></span>
+<span id="cb14-279"><a href="#cb14-279" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"white"</span>, palette<span class="op">=</span><span class="st">"mako_r"</span>, rc<span class="op">=</span>{<span class="st">"lines.linewidth"</span>: <span class="fl">2.5</span>})</span>
+<span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-281"><a href="#cb14-281" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure and axis</span></span>
+<span id="cb14-282"><a href="#cb14-282" aria-hidden="true" tabindex="-1"></a>fig, ax1 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the main line plot on the primary y-axis</span></span>
+<span id="cb14-285"><a href="#cb14-285" aria-hidden="true" tabindex="-1"></a>line_plot <span class="op">=</span> sns.lineplot(x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Value'</span>, hue<span class="op">=</span><span class="st">'Variable'</span>, data<span class="op">=</span>line_plot_final[line_plot_final[<span class="st">'Variable'</span>] <span class="op">!=</span> <span class="st">'All Countries (total)'</span>], ax<span class="op">=</span>ax1, palette<span class="op">=</span><span class="st">'mako'</span>)</span>
+<span id="cb14-286"><a href="#cb14-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-287"><a href="#cb14-287" aria-hidden="true" tabindex="-1"></a><span class="co"># Set primary y-axis labels and title</span></span>
+<span id="cb14-288"><a href="#cb14-288" aria-hidden="true" tabindex="-1"></a>line_plot.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Year'</span>, ylabel<span class="op">=</span><span class="st">'Admitted Refugees'</span>)</span>
+<span id="cb14-289"><a href="#cb14-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-290"><a href="#cb14-290" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major locator</span></span>
+<span id="cb14-291"><a href="#cb14-291" aria-hidden="true" tabindex="-1"></a>line_plot.xaxis.set_major_locator(plt.MultipleLocator(<span class="dv">5</span>))</span>
+<span id="cb14-292"><a href="#cb14-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-293"><a href="#cb14-293" aria-hidden="true" tabindex="-1"></a><span class="co"># Rotate x-axis labels</span></span>
+<span id="cb14-294"><a href="#cb14-294" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb14-295"><a href="#cb14-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-296"><a href="#cb14-296" aria-hidden="true" tabindex="-1"></a><span class="co"># Format y-axis labels with commasSS</span></span>
+<span id="cb14-297"><a href="#cb14-297" aria-hidden="true" tabindex="-1"></a>line_plot.yaxis.set_major_formatter(FuncFormatter(<span class="kw">lambda</span> x, _: <span class="st">'{:,}'</span>.<span class="bu">format</span>(<span class="bu">int</span>(x))))</span>
+<span id="cb14-298"><a href="#cb14-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-299"><a href="#cb14-299" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb14-300"><a href="#cb14-300" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb14-301"><a href="#cb14-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-302"><a href="#cb14-302" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-303"><a href="#cb14-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-304"><a href="#cb14-304" aria-hidden="true" tabindex="-1"></a>To further explain the blue line, this "annual ceiling" is a government reported figure going into the year from the president in consultation with congress.</span>
+<span id="cb14-305"><a href="#cb14-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-306"><a href="#cb14-306" aria-hidden="true" tabindex="-1"></a>The number of admitted refugees and annual ceiling follow a similiar pattern until 2020. After 2020 their is not even close to as many refugees coming into the country as the country proclaimed it would be able to take. Their is no concrete explanation for these numbers, but one idea could be that since immigration numbers follow the same pattern under the same time period as the increase in the ceiling (not shown in figure), that the government wanted to have more funds to support the influx of immigrants, and were pulling some of those funds from their refugee budget. (This is just a conspiracy I thought of and I have no way of confirming this)</span>
+<span id="cb14-307"><a href="#cb14-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-308"><a href="#cb14-308" aria-hidden="true" tabindex="-1"></a><span class="fu"># Question 4</span></span>
+<span id="cb14-309"><a href="#cb14-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-312"><a href="#cb14-312" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-313"><a href="#cb14-313" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig4</span></span>
+<span id="cb14-314"><a href="#cb14-314" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Estimated distribution of unauthorized immigrants over the U.S. (top 5 states)"</span></span>
+<span id="cb14-315"><a href="#cb14-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-316"><a href="#cb14-316" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates[<span class="st">'Code'</span>] <span class="op">=</span> unauthorized_estimates[<span class="st">'State'</span>].<span class="bu">map</span>(code)</span>
+<span id="cb14-317"><a href="#cb14-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-318"><a href="#cb14-318" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates <span class="op">=</span> unauthorized_estimates.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb14-319"><a href="#cb14-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-320"><a href="#cb14-320" aria-hidden="true" tabindex="-1"></a>unauthorized_estimates[<span class="st">'Number of Unauthorized Immigrants'</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb14-321"><a href="#cb14-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-322"><a href="#cb14-322" aria-hidden="true" tabindex="-1"></a>value_to_drop <span class="op">=</span> <span class="st">'United States'</span></span>
+<span id="cb14-323"><a href="#cb14-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-324"><a href="#cb14-324" aria-hidden="true" tabindex="-1"></a>pie_plot <span class="op">=</span> unauthorized_estimates[unauthorized_estimates[<span class="st">'State'</span>] <span class="op">!=</span> value_to_drop]</span>
+<span id="cb14-325"><a href="#cb14-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-326"><a href="#cb14-326" aria-hidden="true" tabindex="-1"></a><span class="co"># Select top 5 rows and sum the rest</span></span>
+<span id="cb14-327"><a href="#cb14-327" aria-hidden="true" tabindex="-1"></a>top_5 <span class="op">=</span> pie_plot.head(<span class="dv">5</span>)</span>
+<span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a>other <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a>    <span class="st">'State'</span>: [<span class="st">'All Other States'</span>],</span>
+<span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a>    <span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>: [pie_plot[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>][<span class="dv">5</span>:].<span class="bu">sum</span>()]</span>
+<span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate top 5 and 'Other'</span></span>
+<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([top_5, other])</span>
+<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-337"><a href="#cb14-337" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [(<span class="dv">144</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">238</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">144</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">152</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">251</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">152</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb14-338"><a href="#cb14-338" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">193</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">193</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">193</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">193</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb14-339"><a href="#cb14-339" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">204</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">204</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">211</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">211</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">211</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb14-340"><a href="#cb14-340" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">220</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">220</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">220</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">230</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">230</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">250</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb14-341"><a href="#cb14-341" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">240</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">248</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">255</span><span class="op">/</span><span class="dv">255</span>), (<span class="dv">245</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">245</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">220</span><span class="op">/</span><span class="dv">255</span>), </span>
+<span id="cb14-342"><a href="#cb14-342" aria-hidden="true" tabindex="-1"></a>          (<span class="dv">250</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">250</span><span class="op">/</span><span class="dv">255</span>, <span class="dv">210</span><span class="op">/</span><span class="dv">255</span>)]</span>
+<span id="cb14-343"><a href="#cb14-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-344"><a href="#cb14-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-345"><a href="#cb14-345" aria-hidden="true" tabindex="-1"></a><span class="co"># o block (250/255, 250/255, 210/255)</span></span>
+<span id="cb14-346"><a href="#cb14-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-347"><a href="#cb14-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-348"><a href="#cb14-348" aria-hidden="true" tabindex="-1"></a>explode <span class="op">=</span> [<span class="fl">0.1</span> <span class="cf">if</span> df[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>][i] <span class="op">==</span> <span class="bu">max</span>(df[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>]) <span class="cf">else</span> <span class="dv">0</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(df))]</span>
+<span id="cb14-349"><a href="#cb14-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-350"><a href="#cb14-350" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb14-351"><a href="#cb14-351" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb14-352"><a href="#cb14-352" aria-hidden="true" tabindex="-1"></a>plt.pie(df[<span class="st">'State Share of the Total Unauthorized Immigrant Population'</span>], labels<span class="op">=</span>df[<span class="st">'State'</span>], autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">140</span>, explode<span class="op">=</span>explode, colors<span class="op">=</span>colors)</span>
+<span id="cb14-353"><a href="#cb14-353" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)  <span class="co"># Equal aspect ratio ensures that pie is drawn as a circle.</span></span>
+<span id="cb14-354"><a href="#cb14-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-355"><a href="#cb14-355" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot</span></span>
+<span id="cb14-356"><a href="#cb14-356" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb14-357"><a href="#cb14-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-358"><a href="#cb14-358" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-359"><a href="#cb14-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-360"><a href="#cb14-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-361"><a href="#cb14-361" aria-hidden="true" tabindex="-1"></a>Under the assumption that these estimates are accurate, about 60 percent of the total illegal immigrant population settile in just 5 states. This is a huge disparity and can help to explain why some major city's are crying out for help over the immigration crisis and dealing with major homelessness issues.</span>
+<span id="cb14-362"><a href="#cb14-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-363"><a href="#cb14-363" aria-hidden="true" tabindex="-1"></a>The distribution cannot be so skewed with these numbers. Citizens of the cities, the cities themselves and even the illegal immigrants will all suffer because of these large disparity. It would be a good idea for policy makers to attempt to more evenly distribute these numbers in order to lighten the burden on these 5 states as well as help these immigrants find more oppurtunity in less populated areas.</span>
+<span id="cb14-364"><a href="#cb14-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-365"><a href="#cb14-365" aria-hidden="true" tabindex="-1"></a><span class="fu"># Question 5</span></span>
+<span id="cb14-366"><a href="#cb14-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-369"><a href="#cb14-369" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-370"><a href="#cb14-370" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig5</span></span>
+<span id="cb14-371"><a href="#cb14-371" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Top and Bottom 3 States by ratio of children taken in to illegal immigrants taken in"</span></span>
+<span id="cb14-372"><a href="#cb14-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-373"><a href="#cb14-373" aria-hidden="true" tabindex="-1"></a>children_clean <span class="op">=</span> children.applymap(<span class="kw">lambda</span> x: x.replace(<span class="st">','</span>, <span class="st">''</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb14-374"><a href="#cb14-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-375"><a href="#cb14-375" aria-hidden="true" tabindex="-1"></a>columns_to_float_2 <span class="op">=</span> [<span class="st">'FY 2014'</span>, <span class="st">'FY 2015'</span>, <span class="st">'FY 2016'</span>, <span class="st">'FY 2017'</span>, <span class="st">'FY 2018'</span>,</span>
+<span id="cb14-376"><a href="#cb14-376" aria-hidden="true" tabindex="-1"></a>       <span class="st">'FY 2019'</span>, <span class="st">'FY 2020'</span>, <span class="st">'FY 2021'</span>, <span class="st">'FY 2022'</span>, <span class="st">'FY 2023 YTD*'</span>,</span>
+<span id="cb14-377"><a href="#cb14-377" aria-hidden="true" tabindex="-1"></a>       <span class="st">'FY 2014 - 2023 YTD* Total'</span>]</span>
+<span id="cb14-378"><a href="#cb14-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-379"><a href="#cb14-379" aria-hidden="true" tabindex="-1"></a>children_clean.replace(<span class="st">'-'</span>, <span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-380"><a href="#cb14-380" aria-hidden="true" tabindex="-1"></a>children_clean[columns_to_float_2] <span class="op">=</span> children_clean[columns_to_float_2].astype(<span class="bu">float</span>)</span>
+<span id="cb14-381"><a href="#cb14-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-382"><a href="#cb14-382" aria-hidden="true" tabindex="-1"></a>merged_children <span class="op">=</span> pd.merge(children_clean, unauthorized_estimates[[<span class="st">'State'</span>,<span class="st">'Number of Unauthorized Immigrants'</span>]], on<span class="op">=</span><span class="st">'State'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb14-383"><a href="#cb14-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-384"><a href="#cb14-384" aria-hidden="true" tabindex="-1"></a>merged_children[<span class="st">'Number of Unauthorized Immigrants'</span>] <span class="op">=</span> merged_children[<span class="st">'Number of Unauthorized Immigrants'</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb14-385"><a href="#cb14-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-386"><a href="#cb14-386" aria-hidden="true" tabindex="-1"></a>merged_children[<span class="st">'Ratio'</span>] <span class="op">=</span> (merged_children[<span class="st">'FY 2014 - 2023 YTD* Total'</span>] <span class="op">/</span> merged_children[<span class="st">'Number of Unauthorized Immigrants'</span>])</span>
+<span id="cb14-387"><a href="#cb14-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-388"><a href="#cb14-388" aria-hidden="true" tabindex="-1"></a>merged_children.sort_values(by<span class="op">=</span>[<span class="st">'Ratio'</span>], ascending<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-389"><a href="#cb14-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-390"><a href="#cb14-390" aria-hidden="true" tabindex="-1"></a>top_3_children <span class="op">=</span> merged_children.head(<span class="dv">3</span>)</span>
+<span id="cb14-391"><a href="#cb14-391" aria-hidden="true" tabindex="-1"></a>bottom_3_children <span class="op">=</span> merged_children.tail(<span class="dv">8</span>).iloc[<span class="op">-</span><span class="dv">7</span>:<span class="op">-</span><span class="dv">4</span>]</span>
+<span id="cb14-392"><a href="#cb14-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-393"><a href="#cb14-393" aria-hidden="true" tabindex="-1"></a>children_graph <span class="op">=</span> pd.concat([top_3_children,bottom_3_children], axis<span class="op">=</span><span class="dv">0</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-394"><a href="#cb14-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-395"><a href="#cb14-395" aria-hidden="true" tabindex="-1"></a>sns.barplot(children_graph, x<span class="op">=</span><span class="st">'State'</span>, y<span class="op">=</span><span class="st">'Ratio'</span>)</span>
+<span id="cb14-396"><a href="#cb14-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-397"><a href="#cb14-397" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb14-398"><a href="#cb14-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-399"><a href="#cb14-399" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-400"><a href="#cb14-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-401"><a href="#cb14-401" aria-hidden="true" tabindex="-1"></a>For this figure, I combined the number of illegal immigrants in each state as well as each states number of unnacompanied children that have been sent there.</span>
+<span id="cb14-402"><a href="#cb14-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-403"><a href="#cb14-403" aria-hidden="true" tabindex="-1"></a>The top 3 states, Louisiana, South Dakota and Alabama all have low total immigrant populations. This is an interesting insight and possibly show cases that these states are more partial to taking in children.</span>
+<span id="cb14-404"><a href="#cb14-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-405"><a href="#cb14-405" aria-hidden="true" tabindex="-1"></a>The bottom 3 states, Arizona, Vermont and New Mexico are also interesting because of how low their ratio is.</span>
+<span id="cb14-406"><a href="#cb14-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-407"><a href="#cb14-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-408"><a href="#cb14-408" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 6</span></span>
+<span id="cb14-409"><a href="#cb14-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-412"><a href="#cb14-412" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-413"><a href="#cb14-413" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig6</span></span>
+<span id="cb14-414"><a href="#cb14-414" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Top and bottom 10 countries by college degree attainment percentages"</span></span>
+<span id="cb14-415"><a href="#cb14-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-416"><a href="#cb14-416" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'Some_college_degree'</span>] <span class="op">=</span> df_cleaned[<span class="st">'Some College or Associate</span><span class="ch">\'</span><span class="st">s Degree'</span>] <span class="op">+</span> df_cleaned[<span class="st">'Bachelor</span><span class="ch">\'</span><span class="st">s Degree or Higher'</span>]</span>
+<span id="cb14-417"><a href="#cb14-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-418"><a href="#cb14-418" aria-hidden="true" tabindex="-1"></a>df_cleaned.sort_values(<span class="st">'Some_college_degree'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-419"><a href="#cb14-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-420"><a href="#cb14-420" aria-hidden="true" tabindex="-1"></a>df_cleaned.replace({<span class="st">'Korea'</span>:<span class="st">'South Korea'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-421"><a href="#cb14-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-422"><a href="#cb14-422" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to get continent from country name</span></span>
+<span id="cb14-423"><a href="#cb14-423" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_continent(country):</span>
+<span id="cb14-424"><a href="#cb14-424" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb14-425"><a href="#cb14-425" aria-hidden="true" tabindex="-1"></a>        country_code <span class="op">=</span> pc.country_name_to_country_alpha2(country, cn_name_format<span class="op">=</span><span class="st">"default"</span>)</span>
+<span id="cb14-426"><a href="#cb14-426" aria-hidden="true" tabindex="-1"></a>        continent_code <span class="op">=</span> pc.country_alpha2_to_continent_code(country_code)</span>
+<span id="cb14-427"><a href="#cb14-427" aria-hidden="true" tabindex="-1"></a>        continent_name <span class="op">=</span> pc.convert_continent_code_to_continent_name(continent_code)</span>
+<span id="cb14-428"><a href="#cb14-428" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> continent_name</span>
+<span id="cb14-429"><a href="#cb14-429" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">KeyError</span>:</span>
+<span id="cb14-430"><a href="#cb14-430" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb14-431"><a href="#cb14-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-432"><a href="#cb14-432" aria-hidden="true" tabindex="-1"></a><span class="co"># Add continent column to DataFrame</span></span>
+<span id="cb14-433"><a href="#cb14-433" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'Continent'</span>] <span class="op">=</span> df_cleaned[<span class="st">'Country'</span>].<span class="bu">apply</span>(get_continent)</span>
+<span id="cb14-434"><a href="#cb14-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-435"><a href="#cb14-435" aria-hidden="true" tabindex="-1"></a>df_cleaned.sort_values(<span class="st">'Some_college_degree'</span>, ascending<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-436"><a href="#cb14-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-437"><a href="#cb14-437" aria-hidden="true" tabindex="-1"></a>education_top_5 <span class="op">=</span> df_cleaned.head(<span class="dv">10</span>)</span>
+<span id="cb14-438"><a href="#cb14-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-439"><a href="#cb14-439" aria-hidden="true" tabindex="-1"></a>education_bot_5 <span class="op">=</span> df_cleaned.tail(<span class="dv">10</span>)</span>
+<span id="cb14-440"><a href="#cb14-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-441"><a href="#cb14-441" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> (education_top_5, education_bot_5)</span>
+<span id="cb14-442"><a href="#cb14-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-443"><a href="#cb14-443" aria-hidden="true" tabindex="-1"></a>education_plot <span class="op">=</span> pd.concat(frames)</span>
+<span id="cb14-444"><a href="#cb14-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the figure size</span></span>
+<span id="cb14-446"><a href="#cb14-446" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb14-447"><a href="#cb14-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-448"><a href="#cb14-448" aria-hidden="true" tabindex="-1"></a><span class="co"># Define colors for each continent</span></span>
+<span id="cb14-449"><a href="#cb14-449" aria-hidden="true" tabindex="-1"></a>continent_colors <span class="op">=</span> {<span class="st">'Asia'</span>: <span class="st">'yellowgreen'</span>, <span class="st">'Europe'</span>: <span class="st">'teal'</span>, <span class="st">'Africa'</span>: <span class="st">'mediumblue'</span>, <span class="st">'North America'</span>: <span class="st">'gold'</span>, <span class="st">'South America'</span>: <span class="st">'blueviolet'</span>, <span class="st">'Oceania'</span>: <span class="st">'brown'</span>}</span>
+<span id="cb14-450"><a href="#cb14-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-451"><a href="#cb14-451" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot</span></span>
+<span id="cb14-452"><a href="#cb14-452" aria-hidden="true" tabindex="-1"></a>bar_plot <span class="op">=</span> plt.barh(education_plot[<span class="st">'Country'</span>], education_plot[<span class="st">'Some_college_degree'</span>], color<span class="op">=</span>[continent_colors[cont] <span class="cf">for</span> cont <span class="kw">in</span> education_plot[<span class="st">'Continent'</span>]])</span>
+<span id="cb14-453"><a href="#cb14-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-454"><a href="#cb14-454" aria-hidden="true" tabindex="-1"></a><span class="co"># Set xlabel</span></span>
+<span id="cb14-455"><a href="#cb14-455" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Percentage of Immigrants that Attained College Degree'</span>)</span>
+<span id="cb14-456"><a href="#cb14-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-457"><a href="#cb14-457" aria-hidden="true" tabindex="-1"></a><span class="co"># Add legend for continent colors</span></span>
+<span id="cb14-458"><a href="#cb14-458" aria-hidden="true" tabindex="-1"></a>plt.legend(handles<span class="op">=</span>[plt.Rectangle((<span class="dv">0</span>,<span class="dv">0</span>),<span class="dv">1</span>,<span class="dv">1</span>, color<span class="op">=</span>continent_colors[cont], label<span class="op">=</span>cont) <span class="cf">for</span> cont <span class="kw">in</span> education_plot[<span class="st">'Continent'</span>].unique()])</span>
+<span id="cb14-459"><a href="#cb14-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-460"><a href="#cb14-460" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb14-461"><a href="#cb14-461" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb14-462"><a href="#cb14-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-463"><a href="#cb14-463" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-464"><a href="#cb14-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-465"><a href="#cb14-465" aria-hidden="true" tabindex="-1"></a>When looking at the countries with the highest percentage of immigrants attaining a college degree in the U.S., we can see that none of those countries are in either North or South America. In contrast, 90 percent of countries with the lowest percentage are from the Americas.</span>
+<span id="cb14-466"><a href="#cb14-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-467"><a href="#cb14-467" aria-hidden="true" tabindex="-1"></a>I believe this points out a big problem. Immigrants coming though our southern border have a signifigantly lower chance of getting a college degree in comparison to immigrants coming from countries in Europe and Asia. I think policy makers should use this data and take some steps to try and bridge this gap in order to create more oppurtunity for under represented immigrant groups in our higher education system.</span>
+<span id="cb14-468"><a href="#cb14-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-469"><a href="#cb14-469" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-470"><a href="#cb14-470" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions</span></span>
+<span id="cb14-471"><a href="#cb14-471" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-472"><a href="#cb14-472" aria-hidden="true" tabindex="-1"></a>I hope that you learned something new while reading through my blog post!</span>
+<span id="cb14-473"><a href="#cb14-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-474"><a href="#cb14-474" aria-hidden="true" tabindex="-1"></a>Here are the key insights from this project all wrapped up:</span>
+<span id="cb14-475"><a href="#cb14-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-476"><a href="#cb14-476" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>The number of green cards being issued is on the rise.</span>
+<span id="cb14-477"><a href="#cb14-477" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Largest immigrant populations along sothern border with hotspots in CA, FL, NY and NJ.</span>
+<span id="cb14-478"><a href="#cb14-478" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>We are declaring a need for way more refugees than we are actually taking in.</span>
+<span id="cb14-479"><a href="#cb14-479" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>60% of estimated illegal immigrants settle in just 5 states (CA, TX, NY, FL, NJ)</span>
+<span id="cb14-480"><a href="#cb14-480" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Some countries show evidence of possible favoritism toward child immigrants</span>
+<span id="cb14-481"><a href="#cb14-481" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Huge disparities between immigrants countries of origin and their success in U.S. higher education system.</span>
+<span id="cb14-482"><a href="#cb14-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-483"><a href="#cb14-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-484"><a href="#cb14-484" aria-hidden="true" tabindex="-1"></a><span class="fu"># Future Work</span></span>
+<span id="cb14-485"><a href="#cb14-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-486"><a href="#cb14-486" aria-hidden="true" tabindex="-1"></a>Some ideas I had to continue this project but did not have time for are:</span>
+<span id="cb14-487"><a href="#cb14-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-488"><a href="#cb14-488" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>To build a time series model to predict future legal and illegal immigration trends.</span>
+<span id="cb14-489"><a href="#cb14-489" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Explore data pertaining to immigrants in the U.S. workforce.</span>
+<span id="cb14-490"><a href="#cb14-490" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Explore correlation between immigration trends and which political parties were in office.</span>
+<span id="cb14-491"><a href="#cb14-491" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Compare immigration trends and economic data year over year.</span>
+<span id="cb14-492"><a href="#cb14-492" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Analyze deporation data.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

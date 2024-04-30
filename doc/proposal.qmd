@@ -1,7 +1,7 @@
 ---
-title: "Proposal: [Your project name]"
+title: "Analyzing US Immigration"
 subtitle: "DATA 450 Capstone"
-author: "[Your Name]"
+author: "Max Bilyk"
 date: today
 date-format: long
 bibliography: references.bib
@@ -13,72 +13,78 @@ jupyter: python3
 
 # Introduction
 
-[This section should contain background and introduction to your general topic.]
 
-# Dataset
+In an era characterized by unprecedented global mobility, the study of immigration patterns is crucial for informed decision-making and policy formulation. The United States, as a melting pot of diverse cultures and backgrounds, experiences a continuous influx of immigrants, shaping the nation's demographics and socio-economic landscape. The proposed project aims to delve deep into the intricate web of U.S. immigration through a comprehensive data science approach.
 
-[In this section, desribe the dataset(s). This includes things like where you
-obtained the dataset. Include a full citation, as specified 
-[here](https://guides.lib.umich.edu/c.php?g=282964&p=3285995). Describe how the
-data was obtained by the data owner/curator, as best as you can. List the 
-variables that you plan to use in your analysis, for example:
+The objective of this project is to harness the power of data analytics and machine learning to analyze extensive datasets related to U.S. immigration. By leveraging advanced statistical techniques and predictive modeling, we aim to unravel hidden patterns, trends, and insights that can inform policymakers, researchers, and the public alike. This project seeks not only to provide a snapshot of current immigration dynamics but also to forecast future trends, facilitating proactive decision-making.
 
-* weight: The patient's weight (kg)
-* sex: The patient's sex, male or female
-* age: The patient's age (months)
+By undertaking this comprehensive data science project, I aim to contribute valuable insights that can guide evidence-based policymaking, foster a deeper understanding of the diverse fabric of U.S. society, and promote informed public discourse on immigration-related matters. The outcomes of this project have the potential to shape policies that align with the evolving needs and aspirations of both current and future generations of immigrants in the United States.
 
-]
+# Datasets
+
+
+The first dataset to be used will be a dataset that has the annual number of new legal permanent residents by country of birth, from the years 1999-2022. A single row represents a given country, and a column represnts the number of new legal immigrants from that given year.
+
+The second dataset to be used will be a dataset that holds information on the immigrant population by state from 1990,2000,2010,2019,2021,2022. Each row represents a state in the U.S. in one of the given years, and the columns are features like, total population, immigrant population and share of total state population in those given years.
+
+The third dataset to be used will be a dataset that holds information on U.S. annual refugee resettlement ceiling and annual number of admitted refigees from the years 1975-2024. Each row represents a given year, and that years annual resettlement ceiling and the number of admitted refugees.
+
+The fourth dataset to be used will be a dataset that holds information on the National and State estimates of the unnathorized immigrant population from 2015 to 2019 (totals, not year over year). Each row represents a given state, their estimated number of unathorized immigrants and the state share of unauthorized immigrant population.
+
+The fifth dataset to be used will be a dataset that holds information on the number of unaccompanied children released to sponsors by state from fiscal years 2014-2023. Each row represents a given state, and the columns represnt the years, and the associated values are the number of unaccompanied children.
+
+The sixth dataset to be used will be a dataset that holds information on the educational attainment of recently arrived immigrants (ages 25 and over) by country of birth as of 2022. A single row represents a given country, and the different columns are Number of Adults, Less than 9th Grade, 9th-12th Grade,High School Diploma or Equivalent, Some College or Associate's Degree, Bachelor's Degree or Higher. The corresponding values are the percentages of the total number of adults.   
+
 
 # Data Acquisition and Processing
 
-[In this section, if applicable, describe how you will obtain the data (if it's
-anything more complicated than a simple download). Discuss what data 
-processing steps will be needed, such as recoding variables, data cleaning,
-data tidying, imputing missing values, etc. See sections 1c, 1d, 1e in the 
-"Good Enough Practices" paper.]
+All of the datasets come from the migration policy institute [website](https://www.migrationpolicy.org/programs/data-hub/us-immigration-trends?gad_source=1&gclid=CjwKCAiAivGuBhBEEiwAWiFmYbxFPH7H1xkFCmwWRPyeHY8k87cMI-NkOL9lygAPqFa7ppdZx1vOxxoC88YQAvD_BwE)."The nonpartisan Migration Policy Institute is an independent, nonpartisan think tank that seeks to improve immigration and integration policies through authoritative research and analysis, opportunities for learning and dialogue, and the development of new ideas to address complex policy questions." This organization has built a website that houses dozens of datasets relating to migration around the world. I selected a subset of these datasets that all pertain to answering questions I had about U.S. immigration. All of the datasets are in xlsx format with headings and pictures in all of the sheets. In order to pull these datasets into python, I will be converting them to csv's by essentially copy and pasting just the data into new sheets and saving them as csv's. The data is thoroughly recorded, so their will not be a ton of work imputing missing values, however the formating and naming conventions of some of these tables is not clean and I will likely be tweaking it in order to benefit the visuals I produce.
+
 
 # Research Questions and Methodology
 
-[In this section, list each of the questions you will explore. Following each
-question, provide a detailed and specific plan for how you plan to answer the 
-question. Include the specific steps you will take, what form the answer will 
-take (a number? table? visualization? model? Give all the specifics), and 
-estimate how many hours each question will take to complete.]
 
-1. Is smoking correlated with diabetes? To answer this, I will create a filled
-bar plot, with the left bar representing non-smokers, the middle bar
-representing people who smoke moderately, and the right bar representing heavy
-smokers. The bars will be the same height, and each bar will be
-colored two colors based on the proportion of patients in the group who do or
-do not have diabetes.
+1. How many green cards are issued annually and to what countries are most of the green cards issued to? I plan to answer this question by pulling the first dataset, and creating a line plot of green card issues year over year to analyze the pattern. Then I will total all the countries over all the given years, and come up with the top countries with the most green cards issued to it's citizens.
 
-2. Question 2? Plan for question 2.
+2. What are the trends of state immigration? For this question, I will build a chloropleth where the color of each state will correspond with the state's immigrant share of total state population in 2022.
 
-3. Question 3? Plan for question 3.
+3. Does the U.S. have the resources to house refugees (Not Immigrants)? To answer this question I will pull the third dataset and build a line plot with two lines. One line being the number of admitted refugees and the other being the annual ceiling the U.S. government claims that year. It will be interesting to see if the admitted line ever surpasses the annual ceiling, and additional research on what was going on in the world at any of those points would lead to interesting insight.
 
-4. etc.
+4. Where are most unauthorized immigrants going when they make it to the U.S.? For this question I will pull the fourth dataset and build a chloropleth map where each state will be colored by it's estimated number of unauthorized immigrants.
+
+5. Do unaccompied children get released to certain states at higher rates than others? For this question I will pull Dataset 5 and 4 and join them together. By doing this I can create a ratio, unnacompanied children over total estimated unauthorized immigrants by state from 2014-2023. It would be interesting to build a bar chart of the top 3 and bottom 3 states using the ratio I will create.
+
+6. Are their differences in educational attainment of recently arrived immigrants based on what countries they come from? For this question I will pull dataset 6 and focus in on a countries immigrants attainment of a bachelor's degrees or higher. For this question, I will build a chloropleth world map, and color each country by their percentage of immigrants that attain a bachelor's degree or higher in the U.S. This will make it possible to quickly compare a large range of countries and make it easy to point out areas that find ample oppurtunity in the U.S. vs those who do not.
+
+
 
 # Work plan
 
-[Fill in the list below with a plan for what you will do each week, starting 2/12. You should
-have around 7 hours worth of work each week. Writing work counts. Several tasks
-have already been filled in for you.]
 
-**Week 4 (2/12 - 2/18):** [Just an example: 
+**Week 4 (2/12 - 2/18):** 
 
-* Data tidying and recoding (4 hours)
-* Question 2 (4 hours).]
+* Project Proposal Planning (10+ hours)
 
 **Week 5 (2/19 - 2/25):**
 
+* Project Proposal Planning (10+ hours)
+
 **Week 6 (2/26 - 3/3):**
+
+* Data cleaning of all datasets (4 hours)
+* Answer Question 1 (3 hours)
+* Answer Question 2 (3 hours)
+
 
 **Week 7 (3/4 - 3/10):**
 
-* Presentation prep and practice (4 hours)
+* Answer Question 3 (3 hours)
+* Answer Question 4 (3 hours)
+* Answer Question 5 (3 hours)
 
 **Week 8 (3/11 - 3/17):** *Presentations given on Wed-Thu 3/13-3/14. Poster Draft due Friday 3/15 (optional extension till 3/17).*
 
+* Answer Question 6 (3 hours)
 * Poster prep (4 hours)
 * Presentation peer review (1.5 hours)
 
@@ -88,17 +94,21 @@ have already been filled in for you.]
 
 * Poster revisions (3.5 hours)
 
-* [Do not schedule any other tasks for this week.]
 
-**Week 10 (4/1 - 4/7):** 
+**Week 10 (4/1 - 4/7):**
+
+* Review code (7 hours)
 
 **Week 11 (4/8 - 4/14):**
 
+* Review and finalize code (3 hours)
+* Begin blog (4 hours)
+
 **Week 12 (4/15 - 4/21):**
 
+* Finalize Blog (7+ hours)
+
 **Week 13 (4/22 - 4/28):** *Blog post draft 1 due Sunday night 4/28.*
-[All project work should be done by the end of this 
-week. The remaining time will be used for writing up and presenting your results.]
 
 * Draft blog post (4 hours).
 
@@ -106,47 +116,26 @@ week. The remaining time will be used for writing up and presenting your results
 
 * Peer feedback (3 hours)
 * Blog post revisions (4 hours)
-* [Do not schedule any other tasks for this week.]
 
 **Week 15 (5/6 - 5/12):**  *Final blog post due Weds 5/8. Blog post read-throughs during final exam slot, Thursday May 9th, 8:00-11:20am.*
 
 * Blog post revisions (2 hours)
 * Peer feedback (2 hours)
-* [Do not schedule any other tasks for this week.]
 
-## Some cool Quarto stuff
 
-[You can delete this section from your proposal.]
+# Links
 
-For your reference, here's an example of a Python code cell in Quarto,
-along with a figure that gets generated, along with a caption and a label
-so that it can be referred to automatically as "Figure 1" (or whatever)
-in the writeup.
+[All Datasets](https://www.migrationpolicy.org/programs/data-hub/us-immigration-trends?gad_source=1&gclid=CjwKCAiAivGuBhBEEiwAWiFmYbxFPH7H1xkFCmwWRPyeHY8k87cMI-NkOL9lygAPqFa7ppdZx1vOxxoC88YQAvD_BwE)
 
-For a demonstration of a line plot on a polar axis, see @fig-polar.
+[UCIS](https://www.uscis.gov/)
 
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
+[NILC](https://www.nilc.org/immigration-reform/?utm_campaign=SignUp&utm_source=Ad&utm_medium=GoogleAds&utm_content=EV02162022&gad_source=1&gclid=CjwKCAiAivGuBhBEEiwAWiFmYTv2P9QQmvivtDKsu5Lsxs5HmbHH0kY-pOmABs4HJS07LOhscVOWphoCkIAQAvD_BwE)
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-
-Here's an example of citing a source [see @phil99, pp. 33-35]. Be sure the source information is entered in "BibTeX" form in the `references.bib` file.
 
 # References
 
-[The bibliography will automatically get generated. Any sources you
-cite in the document will be included. Other entries in the `.bib` file
-will not be included.]
+U.S. Immigration Trends. (n.d.). migrationpolicy.org. https://www.migrationpolicy.org/programs/data-hub/us-immigration-trends?gad_source=1&amp;gclid=CjwKCAiAivGuBhBEEiwAWiFmYbxFPH7H1xkFCmwWRPyeHY8k87cMI-NkOL9lygAPqFa7ppdZx1vOxxoC88YQAvD_BwE
+
+Home. (n.d.). USCIS. https://www.uscis.gov/
+
+How Immigration Has Affected the U.S. (n.d.). National Immigration Law Center. https://www.nilc.org/immigration-reform/?utm_campaign=SignUp&amp;utm_source=Ad&amp;utm_medium=GoogleAds&amp;utm_content=EV02162022&amp;gad_source=1&amp;gclid=CjwKCAiAivGuBhBEEiwAWiFmYTv2P9QQmvivtDKsu5Lsxs5HmbHH0kY-pOmABs4HJS07LOhscVOWphoCkIAQAvD_BwE
