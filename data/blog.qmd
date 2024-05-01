@@ -21,9 +21,9 @@ jupyter: python3
 
 # Background
 
-My inspiration for this research came from a discomfort of being naive to the subject of immigration in my own country. All I hear about on the news is immigration. Some news channels tell me that it is ruining our country and we need to close the borders. Other sources tell me that we aren't doing enough as a country to support immigrants and that they could really beneift our country if we allocated resources correctly to implement them smoothly into our society.
+My inspiration for this research came from my own discomfort with being naive to the subject of immigration in my own country. All I hear about on the news is immigration. Some news channels tell me that it is ruining our country and we need to close the borders. Other sources tell me that we aren't doing enough as a country to support immigrants and that they could really beneift our country if we allocated resources correctly to implement them smoothly into our society.
 
-I wanted to be able to make my own conclusions, so I sought out concrete data pertaining to U.S. immigration, and began my analysis.
+I wanted to be able to make my own conclusions, or atleast better understand this domain, so I sought out concrete data pertaining to U.S. immigration, and began my analysis.
 
 This project aims to uncover the patterns of immigration over time, observe areas where immigrants are residing, and highlight disparities between the educational attainment of immigrants based on their country of origin.
 
@@ -35,45 +35,31 @@ The data used for this project comes from [The Nonpartisan Migration Policy Inst
 
 This was the perfect source of data for me. Through my background research I found so many biased and unproffesional sources that were publishing immigration data, and I did not want to include their data in my project.
 
-In total, I worked with six datasets.
+In total, I worked with six datasets...
 
-## Dataset 1
-A dataset that has the annual number of new legal permanent residents by country of birth, from the years 1999-2022. A single row represents a given country, and a column represnts the number of new legal immigrants from that given year.
+## Legal Immigrants
+A dataset that has the annual number of new legal permanent residents by country of birth.
 
-## Dataset 2
-A dataset that holds information on the immigrant population by state from 1990, 2000, 2010,2019, 2021, 2022. Each row represents a state in the U.S. in one of the given years, and the columns are features like, total population, immigrant population and share of total state population in those given years.
+## Distribution of Legal Immigrants by State
+A dataset that holds information on the immigrant population by state.
 
-## Dataset 3
-A dataset that holds information on U.S. annual refugee resettlement ceiling and annual number of admitted refigees from the years 1975-2024. Each row represents a given year, and that years annual resettlement ceiling and the number of admitted refugees.
+## Annual Refugees
+A dataset that holds information on U.S. annual refugee resettlement ceiling and annual number of admitted refigees from the years 1975-2024.
 
-## Dataset 4
-A dataset that holds information on the National and State estimates of the unnathorized immigrant population from 2015 to 2019 (totals, not year over year). Each row represents a given state, their estimated number of unathorized immigrants and the state share of unauthorized immigrant population.
+## Illegal Immigrant Estimates
+A dataset that holds information on the National and State estimates of the unnathorized immigrant population from 2015 to 2019 (totals, not year over year).
 
-## Dataset 5
-A dataset that holds information on the number of unaccompanied children released to sponsors by state from fiscal years 2014-2023. Each row represents a given state, and the columns represnt the years, and the associated values are the number of unaccompanied children.
+## Unacompanied Children
+A dataset that holds information on the number of unaccompanied children released to sponsors by state from fiscal years 2014-2023. 
 
-## Dataset 6
-A dataset that holds information on the educational attainment of recently arrived immigrants (ages 25 and over) by country of birth as of 2022. A single row represents a given country, and the different columns are Number of Adults, Less than 9th Grade, 9th-12th Grade,High School Diploma or Equivalent, Some College or Associate's Degree, Bachelor's Degree or Higher. The corresponding values are the percentages of the total number of adults.
-
-# The Questions
-
-1. How many green cards are issued annually and to what countries are most of the green cards issued to? I plan to answer this question by pulling the first dataset, and creating a line plot of green card issues year over year to analyze the pattern. Then I will total all the countries over all the given years, and come up with the top 5 countries with the most green cards issued to it's citizens.
-
-2. What are the trends of state immigration? For this question, I will build a chloropleth where the color of each state will correspond with the state's immigrant share of total state population in 2022.
-
-3. Does the U.S. have the resources to house refugees (Not Immigrants)? To answer this question I will pull the third dataset and build a line plot with two lines. One line being the number of admitted refugees and the other being the annual ceiling the U.S. government claims that year. It will be interesting to see if the admitted line ever surpasses the annual ceiling, and additional research on what was going on in the world at any of those points would lead to interesting insight.
-
-4. Where are most unauthorized immigrants going when they make it to the U.S.? For this question I will pull the fourth dataset and build a chloropleth map where each state will be colored by it's estimated number of unauthorized immigrants.
-
-5. Do unaccompied children get released to certain states at higher rates than others? For this question I will pull Dataset 5 and 4 and join them together. By doing this I can create a ratio, unnacompanied children over total estimated unauthorized immigrants by state from 2014-2023. It would be interesting to build a bar chart of the top 3 and bottom 3 states using the ratio I will create.
-
-6. Are their differences in educational attainment of recently arrived immigrants based on what countries they come from? For this question I will pull dataset 6 and focus in on a countries immigrants attainment of a bachelor's degrees or higher. For this question, I will build a chloropleth world map, and color each country by their percentage of immigrants that attain a bachelor's degree or higher in the U.S. This will make it possible to quickly compare a large range of countries and make it easy to point out areas that find ample oppurtunity in the U.S. vs those who do not.
+## Educational Attainment of Immigrants in the U.S.
+A dataset that holds information on the educational attainment of recently arrived immigrants (ages 25 and over) by country of birth as of 2022.
 
 # Data Preprocessing
 
 Feel free to skip this section if it is not of interest to you. It consists of all imports needed for the analysis and the code cleaning the datasets.
 
-```{python}
+```{python, warning=FALSE, error=FALSE}
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -110,15 +96,18 @@ legal_country = pd.read_csv("new_legals_country - Sheet1.csv")
 
 unauthorized_estimates = pd.read_csv("Unauthorized_estimates - Sheet1.csv")
 
-unauthorized_estimates['State Share of the Total Unauthorized Immigrant Population'] = unauthorized_estimates['State Share of the Total Unauthorized Immigrant Population'].str.replace('%','').astype(float)
+unauthorized_estimates['State Share of the Total Unauthorized Immigrant Population'] = unauthorized_estimates['State Share of the Total Unauthorized Immigrant Population'].str.replace('%','').astype(float);
 
 ```
 
-# The Results
+# Questions and Results
 
-## Question 1
 
-```{python}
+## Analyzing annual green card admissions
+
+How many green cards are issued annually and to what countries are most of the green cards issued to? I plan to answer this question by pulling the first dataset, and then creating a line plot of the total amount of green cards issued year over year to analyze the pattern. Then I will total all the countries over all the given years.
+
+```{python, warning=FALSE, error=FALSE}
 #| label: fig1
 #| fig-cap: "Number of Green Cards Admitted by U.S. 1999-2022"
 
@@ -151,18 +140,20 @@ plt.gca().xaxis.set_major_locator(plt.MultipleLocator(5))
 
 plt.xticks(rotation=45)
 
-plt.show()
+plt.show();
 ```
 
-Analyzing this figure, we can see that the number of green cards issued hit a low after 2001, and then spikes until about 2007. After that their is a steady decrease in the number of green cards issued until 2020, where their has been a increase till present day.
+Analyzing this figure, we can see that the number of green cards issued hit a low after 2001, and then spikes until about 2007. After that, there is a steady decrease in the number of green cards issued until 2020, where there has been an increase till present day.
 
-Some possible explanations for these patterns can be the terrorist attack of 9/11 leading to a much more strict border. Also, president Biden's election into office in 2021 explains the increases we are seeing now. His campaign spoke a lot about letting more immigrants into the country and it is apparent that he and his administration have been keeping their promises.
+Some possible explanations for these patterns can be the terrorist attack of 9/11 leading to a much more strict border control. Also, president Biden's election into office in 2021 explains the increases we are seeing now. His campaign spoke a lot about letting more immigrants into the country and it is apparent that he and his administration have been keeping their promises.
 
 The vast majority of these green cards were issued to individuals residing in the Americas as well as Asia. (Not shown in figure)
 
-## Question 2
+## Immigration Trends
 
-```{python}
+What are the trends of state immigration? For this question, I will build a chloropleth where the color of each state will correspond with the state's immigrant share of total state population in 2022.
+
+```{python, warning=FALSE, error=FALSE}
 #| label: fig2
 #| fig-cap: "Percentages of total state populations that are authorized immigrants"
 
@@ -234,19 +225,21 @@ fig = px.choropleth(state_from_pivot, locations='Code', color=state_from_pivot['
                           )
 fig.update_layout(width=1200, height=800, coloraxis_colorbar=dict(len=0.6),
                     coloraxis_colorbar_title='Percent Share')
-fig.show()
+fig.show();
 
 ```
 
-Analyzing this figure, we can see that there are larger immigrant populations alongside the southern border, which makes sense as it is less difference to travel for immigrants coming from the Americas, which previously stated is the largest group in which immigrants are coming from.
+Analyzing this figure, we can see that there are larger immigrant populations alongside the southern border, which makes sense as it is a much lesser distance to travel for immigrants coming from the Americas, which previously stated is the largest group in which immigrants are coming from.
 
-Their are hotspots in Florida and some North Eastern states like New York and New Jersey which is suprising because these states require quite the transit from the southern border. An explanantion for these number could be that these states offer the most oppurtunity for migrants.
+There are hotspots in Florida and some North Eastern states like New York and New Jersey, which is suprising because these states are quite a hike away from the southern border. An explanantion for these numbers could be that these states offer the most oppurtunity for migrants.
 
-When examing the northern border, we can see a lot of cold spots. This makes sense as they are the farthest states from our southern border.
+When examing the northern border, we can see a lot of cold spots. Further research should look to into there are any other reasons before this besides distance.
 
-## Question 3
+## Analyzing Refugee Statistics
 
-```{python}
+Does the U.S. have the resources to house refugees (Not Immigrants)? To answer this question I will pull the third dataset and build a line plot with two lines. One line being the number of admitted refugees and the other being the annual ceiling the U.S. government claims that year. It will be interesting to see if the admitted line ever surpasses the annual ceiling, and additional research on what was going on in the world at any of those points would lead to interesting insight.
+
+```{python, warning=FALSE, error=FALSE}
 #| label: fig3
 #| fig-cap: "Count of refugee admissions compared with refugee capacity"
 
@@ -290,17 +283,19 @@ plt.xticks(rotation=45)
 line_plot.yaxis.set_major_formatter(FuncFormatter(lambda x, _: '{:,}'.format(int(x))))
 
 # Show the plot
-plt.show()
+plt.show();
 
 ```
 
 To further explain the blue line, this "annual ceiling" is a government reported figure going into the year from the president in consultation with congress.
 
-The number of admitted refugees and annual ceiling follow a similiar pattern until 2020. After 2020 their is not even close to as many refugees coming into the country as the country proclaimed it would be able to take. Their is no concrete explanation for these numbers, but one idea could be that since immigration numbers follow the same pattern under the same time period as the increase in the ceiling (not shown in figure), that the government wanted to have more funds to support the influx of immigrants, and were pulling some of those funds from their refugee budget. (This is just a conspiracy I thought of and I have no way of confirming this)
+The number of admitted refugees and annual ceiling follow a similiar pattern until 2020. After 2020 there is not even close to as many refugees coming into the country as the country proclaimed it would be able to take. There is no concrete explanation for these numbers, but one idea could be that since immigration numbers follow the same pattern under the same time period as the increase in the reported ceiling (not shown in figure), that the government wanted to have more funds to support the influx of immigrants, and were pulling some of those funds from their refugee budget. (This is just a conspiracy I thought of and I have no research that can support this claim)
 
-# Question 4
+## Estimated Illegal Immigrant Numbers and Their Distribution
 
-```{python}
+Where are most unauthorized immigrants going when they make it to the U.S.?
+
+```{python, warning=FALSE, error=FALSE}
 #| label: fig4
 #| fig-cap: "Estimated distribution of unauthorized immigrants over the U.S. (top 5 states)"
 
@@ -344,18 +339,20 @@ plt.pie(df['State Share of the Total Unauthorized Immigrant Population'], labels
 plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 # Show plot
-plt.show()
+plt.show();
 
 ```
 
 
 Under the assumption that these estimates are accurate, about 60 percent of the total illegal immigrant population settile in just 5 states. This is a huge disparity and can help to explain why some major city's are crying out for help over the immigration crisis and dealing with major homelessness issues.
 
-The distribution cannot be so skewed with these numbers. Citizens of the cities, the cities themselves and even the illegal immigrants will all suffer because of these large disparity. It would be a good idea for policy makers to attempt to more evenly distribute these numbers in order to lighten the burden on these 5 states as well as help these immigrants find more oppurtunity in less populated areas.
+The distribution cannot be as skewed as it is. Citizens of the cities, the cities themselves and even the illegal immigrants will all suffer because of this large disparity. It would be a good idea for policy makers to attempt to more evenly distribute immigrants in order to lighten the burden on these 5 states as well as help these immigrants find more oppurtunity in less populated areas.
 
-# Question 5
+## Unaccompanied Children Statistics
 
-```{python}
+Do unaccompied children get released to certain states at higher rates than others?
+
+```{python, warning=FALSE, error=FALSE}
 #| label: fig5
 #| fig-cap: "Top and Bottom 3 States by ratio of children taken in to illegal immigrants taken in"
 
@@ -383,7 +380,7 @@ children_graph = pd.concat([top_3_children,bottom_3_children], axis=0, ignore_in
 
 sns.barplot(children_graph, x='State', y='Ratio')
 
-plt.xticks(rotation=45)
+plt.xticks(rotation=45);
 
 ```
 
@@ -394,9 +391,11 @@ The top 3 states, Louisiana, South Dakota and Alabama all have low total immigra
 The bottom 3 states, Arizona, Vermont and New Mexico are also interesting because of how low their ratio is.
 
 
-## Question 6
+## Educational Attainment Statistics
 
-```{python}
+Are there differences in educational attainment of recently arrived immigrants based on what countries they come from? 
+
+```{python, warning=FALSE, error=FALSE}
 #| label: fig6
 #| fig-cap: "Top and bottom 10 countries by college degree attainment percentages"
 
@@ -445,27 +444,27 @@ plt.xlabel('Percentage of Immigrants that Attained College Degree')
 plt.legend(handles=[plt.Rectangle((0,0),1,1, color=continent_colors[cont], label=cont) for cont in education_plot['Continent'].unique()])
 
 # Show the plot
-plt.show()
+plt.show();
 
 ```
 
 When looking at the countries with the highest percentage of immigrants attaining a college degree in the U.S., we can see that none of those countries are in either North or South America. In contrast, 90 percent of countries with the lowest percentage are from the Americas.
 
-I believe this points out a big problem. Immigrants coming though our southern border have a signifigantly lower chance of getting a college degree in comparison to immigrants coming from countries in Europe and Asia. I think policy makers should use this data and take some steps to try and bridge this gap in order to create more oppurtunity for under represented immigrant groups in our higher education system.
+I believe this points out a big problem. Immigrants coming through our southern border have a signifigantly lower chance of getting a college degree in comparison to immigrants coming from countries in Europe and Asia. I think policy makers should use this data and take some steps to try and bridge this gap in order to create more oppurtunity for under-represented immigrant groups in our higher education system.
 
 
 # Conclusions
 
 I hope that you learned something new while reading through my blog post!
 
-Here are the key insights from this project all wrapped up:
+Here are the key insights from this project:
 
 * The number of green cards being issued is on the rise.
 * Largest immigrant populations along sothern border with hotspots in CA, FL, NY and NJ.
-* We are declaring a need for way more refugees than we are actually taking in.
-* 60% of estimated illegal immigrants settle in just 5 states (CA, TX, NY, FL, NJ)
-* Some countries show evidence of possible favoritism toward child immigrants
-* Huge disparities between immigrants countries of origin and their success in U.S. higher education system.
+* In recent years, we are declaring a need for way more refugees than we are actually taking in.
+* 60% of estimated illegal immigrants settle in just 5 states (CA, TX, NY, FL, NJ).
+* Some countries show evidence of possible favoritism toward child immigrants.
+* Huge disparities between immigrant's countries of origin and their success in U.S. higher education system.
 
 
 # Future Work
