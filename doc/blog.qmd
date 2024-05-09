@@ -19,9 +19,7 @@ jupyter: python3
 ![Source: Forbes](https://imageio.forbes.com/specials-images/imageserve/1132026265/Illustration-of-USA-immigration/0x0.jpg?format=jpg&crop=8176,4013,x0,y391,safe&width=1440){fig-alt="U.S. flag with migrants"}
 
 
-# Background
-
-My inspiration for this research came from my own discomfort with being naive to the subject of immigration in my own country. All I hear about on the news is immigration. Some news channels tell me that it is ruining our country and we need to close the borders. Other sources tell me that we aren't doing enough as a country to support immigrants and that they could really beneift our country if we allocated resources correctly to implement them smoothly into our society.
+My inspiration for this research came from my own discomfort with being naive to the subject of immigration in my own country. All I hear about on the news is immigration. Some news channels tell me that it is ruining our country and we need to close the borders. Other sources tell me that we aren't doing enough as a country to support immigrants and that they could really beneift our country if we allocated resources correctly to integrate them smoothly into our society.
 
 I wanted to be able to make my own conclusions, or atleast better understand this domain, so I sought out concrete data pertaining to U.S. immigration, and began my analysis.
 
@@ -37,27 +35,31 @@ This was the perfect source of data for me. Through my background research I fou
 
 In total, I worked with six datasets...
 
-## Legal Immigrants
-A dataset that has the annual number of new legal permanent residents by country of birth.
+- Legal Immigrants
+    - A dataset that has the annual number of new legal permanent residents by country of birth.**
 
-## Distribution of Legal Immigrants by State
-A dataset that holds information on the immigrant population by state.
+- Distribution of Legal Immigrants by State
+    - A dataset that holds information on the immigrant population by state.
 
-## Annual Refugees
-A dataset that holds information on U.S. annual refugee resettlement ceiling and annual number of admitted refigees from the years 1975-2024.
+- Annual Refugees
+    - A dataset that holds information on U.S. annual refugee resettlement ceiling and annual number of admitted refugees from the years 1975-2024.
 
-## Illegal Immigrant Estimates
-A dataset that holds information on the National and State estimates of the unnathorized immigrant population from 2015 to 2019 (totals, not year over year).
+- Illegal Immigrant Estimates
+    - A dataset that holds information on the National and State estimates of the unnathorized immigrant population from 2015 to 2019 (totals, not year over year).
 
-## Unacompanied Children
-A dataset that holds information on the number of unaccompanied children released to sponsors by state from fiscal years 2014-2023. 
+- Unacompanied Children
+    - A dataset that holds information on the number of unaccompanied children released to sponsors by state from fiscal years 2014-2023. 
 
-## Educational Attainment of Immigrants in the U.S.
-A dataset that holds information on the educational attainment of recently arrived immigrants (ages 25 and over) by country of birth as of 2022.
+- Educational Attainment of Immigrants in the U.S.
+    - A dataset that holds information on the educational attainment of recently arrived immigrants (ages 25 and over) by country of birth as of 2022.
 
 # Data Preprocessing
 
-Feel free to skip this section if it is not of interest to you. It consists of all imports needed for the analysis and the code cleaning the datasets.
+Feel free to skip this section if it is not of interest to you. It conatins information on data cleaning and the code block contains all imports needed for the analysis and the code cleaning the datasets.
+
+The datasets were all brought in from excel spreadsheets so a lot of them had column names with spaces that had to be cleaned. Furthermore, a lot of values contained percentage symbols which also had to be remobved and those same values needed their data types to be changed in order to conduct analysis with them.
+
+If you just want to look at the numbers and read through them. The best thing to do is go through my github repository where this website stems from and to read them through excel. However to conduct any sort of analysis with python or another programming language, cleaning the datasets in these ways is necessary.
 
 ```{python, warning=FALSE, error=FALSE}
 
@@ -128,11 +130,11 @@ val_to_drop = 'All Countries (total)'
 
 grouped_legal_plot = grouped_legal[grouped_legal['Country'] != val_to_drop]
 
-mask = (grouped_legal['Country'] == 'All Countries (total)')
+mask = (grouped_legal['Country'] == 'All Countries (total)');
 
-group_plot = grouped_legal[mask]
+group_plot = grouped_legal[mask];
 
-sns.lineplot(group_plot, x='variable', y='value').set(xlabel='Year', ylabel='Number of Green Cards Issued')
+sns.lineplot(group_plot, x='variable', y='value').set(xlabel='Year', ylabel='Number of Green Cards Issued');
 
 sns.set(style="white", palette="mako_r", rc={"lines.linewidth": 2.5})
 
@@ -452,6 +454,15 @@ When looking at the countries with the highest percentage of immigrants attainin
 
 I believe this points out a big problem. Immigrants coming through our southern border have a signifigantly lower chance of getting a college degree in comparison to immigrants coming from countries in Europe and Asia. I think policy makers should use this data and take some steps to try and bridge this gap in order to create more oppurtunity for under-represented immigrant groups in our higher education system.
 
+# Future Work
+
+Some ideas I had to continue this project but did not have time for are:
+
+1. To build a time series model to predict future legal and illegal immigration trends.
+2. Explore data pertaining to immigrants in the U.S. workforce.
+3. Explore correlation between immigration trends and which political parties were in office.
+4. Compare immigration trends and economic data year over year.
+5. Analyze deporation data.
 
 # Conclusions
 
@@ -466,13 +477,4 @@ Here are the key insights from this project:
 * Some countries show evidence of possible favoritism toward child immigrants.
 * Huge disparities between immigrant's countries of origin and their success in U.S. higher education system.
 
-
-# Future Work
-
-Some ideas I had to continue this project but did not have time for are:
-
-1. To build a time series model to predict future legal and illegal immigration trends.
-2. Explore data pertaining to immigrants in the U.S. workforce.
-3. Explore correlation between immigration trends and which political parties were in office.
-4. Compare immigration trends and economic data year over year.
-5. Analyze deporation data.
+U.S. immigration is one the strongest gateways for people around the world to find a better life and oppurtunity. Making sure that the correct policies are put in place based on the current state of immigration will help to ensure that the U.S. can always except and integrate immigrants into the country without the current citizens experienceing diminishing returns. It is important to conduct ana analysis like this one so that the current landscape can be understood and better changes can be made to the system, for U.S. citizens and incoming immigrants alike.
